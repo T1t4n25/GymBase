@@ -57,18 +57,7 @@ public class payController implements Initializable {
     private final String[] typeChoices = {"كمال اجسام","تخسيس","برايفت", "حصة"};
 
     public payController() {
-        subType.getItems().addAll(typeChoices);
-        expDate.setValue(LocalDate.now());
-        //Members Table
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        stateCol.setCellValueFactory(new PropertyValueFactory<>("subState"));
-        typeCol.setCellValueFactory(new PropertyValueFactory<>("subType"));
-        valueCol.setCellValueFactory(new PropertyValueFactory<>("subValue"));
-        //Expenses Table
-        expNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        commentCol.setCellValueFactory(new PropertyValueFactory<>("comment"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-        expValueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
+
     }
 
     @FXML
@@ -104,7 +93,17 @@ public class payController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
+        subType.getItems().addAll(typeChoices);
+        expDate.setValue(LocalDate.now());
+        //Members Table
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        stateCol.setCellValueFactory(new PropertyValueFactory<>("subState"));
+        typeCol.setCellValueFactory(new PropertyValueFactory<>("subType"));
+        valueCol.setCellValueFactory(new PropertyValueFactory<>("subValue"));
+        //Expenses Table
+        expNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        commentCol.setCellValueFactory(new PropertyValueFactory<>("comment"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        expValueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
     }
 }
