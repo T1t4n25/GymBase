@@ -75,7 +75,7 @@ public class payController implements Initializable {
         resultSet.updateString(4, expField.getText());
     }
     @FXML
-    private void edit() throws SQLException {
+    private void edit() {
         Member selectedMember = membersTable.getSelectionModel().getSelectedItem();
         if (selectedMember != null) {
             subName.setText(selectedMember.getName());
