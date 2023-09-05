@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.payController">
+   <children>
+      <Label layoutX="9.0" layoutY="14.0" text="الإعـدادات">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

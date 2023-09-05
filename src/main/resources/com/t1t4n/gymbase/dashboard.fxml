@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.DashboardController">
+   <children>
+      <Label layoutX="1097.0" layoutY="14.0" text="الرئيسية">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <Line endX="597.4000244140625" layoutX="597.0" layoutY="350.0" startX="-597.0" />
+      <Line endX="0.20001220703125" endY="406.0" layoutX="597.0" layoutY="294.0" startX="0.20001220703125" startY="-294.0" />
+      <HBox layoutX="654.0" layoutY="134.0" prefHeight="100.0" prefWidth="200.0" spacing="45.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Arc fx:id="scheduled" fill="BLUE" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
+                  <Label fx:id="scheduledNum" text="---">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="مجدول لهذا الشهر">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Arc fx:id="done" fill="LIME" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
+                  <Label fx:id="doneNum" text="---">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="تم التحصيل">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Arc fx:id="late" fill="RED" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
+                  <Label fx:id="lateNum" text="---">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="متأخر">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="newMembers" layoutX="30.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="244.0" prefWidth="547.0">
+         <columns>
+            <TableColumn fx:id="newName" editable="false" prefWidth="272.80000001192093" text="الاسم" />
+            <TableColumn fx:id="newDuration" editable="false" prefWidth="275.20001220703125" text="المدة" />
+         </columns>
+      </TableView>
+      <TableView fx:id="overdue" layoutX="30.0" layoutY="442.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="244.0" prefWidth="547.0">
+         <columns>
+            <TableColumn fx:id="overdueName" editable="false" prefWidth="272.80000001192093" text="الاسم" />
+            <TableColumn fx:id="overdueCash" editable="false" prefWidth="275.20001220703125" text="المطلوب" />
+         </columns>
+      </TableView>
+      <TableView fx:id="todayDues" layoutX="622.0" layoutY="442.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="244.0" prefWidth="547.0">
+         <columns>
+            <TableColumn fx:id="dueName" editable="false" prefWidth="272.80000001192093" text="الاسم" />
+            <TableColumn fx:id="dueCash" editable="false" prefWidth="275.20001220703125" text="المطلوب" />
+         </columns>
+      </TableView>
+      <Label layoutX="801.0" layoutY="46.0" text="ماليات هذا الشهر">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="229.0" layoutY="46.0" text="الأعضاء الجدد">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="226.0" layoutY="389.0" text="متأخرات الدفع">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="389.0" text="مجدول للدفع اليوم">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
