@@ -94,8 +94,8 @@ public class DashboardController implements Initializable {
 
         try {
             newMembersFill();
-            dueMembersFill();
-            overdueMembersFill();
+            //dueMembersFill();
+            //overdueMembersFill();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
