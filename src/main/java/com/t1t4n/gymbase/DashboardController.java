@@ -1,6 +1,7 @@
 package com.t1t4n.gymbase;
 
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,6 +69,7 @@ public class DashboardController implements Initializable {
         resultSet = DBConnection.statement.executeQuery(
                 "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND (`joinDate` >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND `joinDate` <= CURDATE());"
         );
+        newData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
         while(resultSet.next()){
             String name = resultSet.getString("name");
