@@ -47,6 +47,8 @@ public class addMemberController implements Initializable{
     TableColumn<Member, Date> joinDateCol;
     @FXML
     TableColumn<Member, Date> deadlineDateCol;
+    @FXML
+    TableColumn<Member, Date> lastPayDateCol;
 
     ResultSet resultSet;
     private final String[] stateChoices = {"نشط", "غير نشط", "معلق"};
@@ -56,17 +58,18 @@ public class addMemberController implements Initializable{
     int id;
     double value;
     String name, number, status, type;
-    Date date, deadline;
+    Date date, deadline, lastPay;
 
     boolean editing = false;
     int editId;
     String allQuery = "SELECT * FROM `members_data`";
     public addMemberController() throws SQLException {
-
+//        membersTable = new TableView<>();
+//        refreshTable(allQuery);
 
     }
 
-    private void refreshTable(String query) throws SQLException {
+    public void refreshTable(String query) throws SQLException {
         resultSet =DBConnection.statement.executeQuery(query);
         data = FXCollections.observableArrayList();
         resultSet.beforeFirst();
@@ -79,8 +82,9 @@ public class addMemberController implements Initializable{
             value = resultSet.getDouble(6);
             date = resultSet.getDate(7);
             deadline = resultSet.getDate(8);
+            lastPay = resultSet.getDate(9);
 
-            data.add(new Member(id, name, status, type, value, deadline, date, number));
+            data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
             membersTable.setItems(data);
         }
 
@@ -167,6 +171,7 @@ public class addMemberController implements Initializable{
         deadlineDateCol.setCellValueFactory(new PropertyValueFactory<>("deadlineDate"));
         joinDateCol.setCellValueFactory(new PropertyValueFactory<>("joinDate"));
         numberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        lastPayDateCol.setCellValueFactory(new PropertyValueFactory<>("lastPayDate"));
 
         try {
             refreshTable(allQuery);

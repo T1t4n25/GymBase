@@ -31,9 +31,6 @@ public class HelloController implements Initializable {
     AnchorPane billing= FXMLLoader.load(this.getClass().getResource("billing.fxml"));
     AnchorPane settings= FXMLLoader.load(this.getClass().getResource("settings.fxml"));
 
-    AnchorPane[] anchors = {dashboard, addMember, pay, billing};
-
-
     public HelloController() throws IOException {
     }
     @FXML
@@ -61,7 +58,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        container.setCenter(dashboard);
+        container.setCenter(pay);
 
     }
 

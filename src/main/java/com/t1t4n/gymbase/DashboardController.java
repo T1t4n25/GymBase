@@ -1,12 +1,22 @@
 package com.t1t4n.gymbase;
 
+
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Arc;
 
-public class DashboardController {
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.ResourceBundle;
+
+public class DashboardController implements Initializable {
     @FXML
     Arc late;
     @FXML
@@ -26,17 +36,69 @@ public class DashboardController {
     @FXML
     TableView<Member> overdue;
     @FXML
-    TableColumn<Member, String> newName;
+    TableColumn<Member, String> newNameCol;
     @FXML
-    TableColumn<Member, String> dueName;
+    TableColumn<Member, String> subTypeCol;
     @FXML
-    TableColumn<Member, String> overdueName;
+    TableColumn<Member, String> dueNameCol;
     @FXML
-    TableColumn<Member, Double> dueCash;
+    TableColumn<Member, String> overdueNameCol;
     @FXML
-    TableColumn<Member, Double> overdueCash;
+    TableColumn<Member, Double> dueCashCol;
     @FXML
-    TableColumn<Member, String> newDuration;
+    TableColumn<Member, Double> overdueCashCol;
+    @FXML
+    TableColumn<Member, String> newDurationCol;
+    @FXML
+    TableColumn<Member, String> dueNumberCol;
+    @FXML
+    TableColumn<Member, String> overdueNumberCol;
 
+    ObservableList<Member> newData, dueData, overdueData;
+    ResultSet resultSet;
+    public DashboardController() {
+        newNameCol = new TableColumn<>();
+        subTypeCol = new TableColumn<>();
+        newDurationCol = new TableColumn<>();
 
+    }
+
+    private void newMembersFill() throws SQLException {
+
+        resultSet = DBConnection.statement.executeQuery(
+                "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND (`joinDate` >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND `joinDate` <= CURDATE());"
+        );
+        resultSet.beforeFirst();
+        while(resultSet.next()){
+            String name = resultSet.getString("name");
+            String type = resultSet.getString("subType");
+            Date joinDate = resultSet.getDate( "joinDate");
+
+            newData.add(new Member(name, type, joinDate));
+        }
+        newMembers.setItems(newData);
+    }
+    private void dueMembersFill(){
+
+    }
+    private void overdueMembersFill(){
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        newNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        subTypeCol.setCellValueFactory(new PropertyValueFactory<>("subType"));
+        newDurationCol.setCellValueFactory(new PropertyValueFactory<>("joinDuration"));
+
+        try {
+            newMembersFill();
+            dueMembersFill();
+            overdueMembersFill();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

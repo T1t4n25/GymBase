@@ -1,5 +1,7 @@
 package com.t1t4n.gymbase;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 public class Member {
@@ -11,13 +13,14 @@ public class Member {
     Date subStartDate;
     Date deadlineDate;
     Date joinDate;
+    Date lastPayDate;
     String number;
-
+    int joinDuration;
 
     //full constructor for data importing from database
 
 
-    public Member(int id, String name, String subState, String subType, Double subValue, Date deadlineDate, Date joinDate, String number) {
+    public Member(int id, String name, String subState, String subType, Double subValue, Date deadlineDate, Date joinDate, String number, Date lastPayDate) {
         this.id = id;
         this.name = name;
         this.subState = subState;
@@ -26,22 +29,24 @@ public class Member {
         this.deadlineDate = deadlineDate;
         this.joinDate = joinDate;
         this.number = number;
+        this.lastPayDate = lastPayDate;
     }
 
-    //sub constructor for adding members without paying
-    public Member(int id, String name, String number, String subType, String subState, Date joinDate) {
+    public Member(int id, String name, String subState, String subType, Double subValue, Date date, Date lastpay, Date deadlineDate) {
         this.id = id;
         this.name = name;
-        this.number = number;
-        this.subType = subType;
         this.subState = subState;
-        this.joinDate = joinDate;
+        this.subType = subType;
+        this.subValue = subValue;
+        this.joinDate = date;
+        this.lastPayDate = lastpay;
+        this.deadlineDate =deadlineDate;
     }
 
-    //sub constructor for adding the money and the deadline based on months
-    public Member(Double subValue, Date deadlineDate) {
-        this.subValue = subValue;
-        this.deadlineDate = deadlineDate;
+    public Member(String name, String subType, Date joinDate) {
+        this.name = name;
+        this.subType = subType;
+        this.joinDuration = Period.between(joinDate.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate(), LocalDate.now()).getDays();
     }
 
     public int getId() {
@@ -114,5 +119,21 @@ public class Member {
 
     public void setSubStartDate(Date subStartDate) {
         this.subStartDate = subStartDate;
+    }
+
+    public Date getLastPayDate() {
+        return lastPayDate;
+    }
+
+    public void setLastPayDate(Date lastPayDate) {
+        this.lastPayDate = lastPayDate;
+    }
+
+    public int getJoinDuration() {
+        return joinDuration;
+    }
+
+    public void setJoinDuration(int joinDuration) {
+        this.joinDuration = joinDuration;
     }
 }
