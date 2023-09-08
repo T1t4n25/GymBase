@@ -1,7 +1,5 @@
 package com.t1t4n.gymbase;
 
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Date;
 
 public class Member {
@@ -43,10 +41,10 @@ public class Member {
         this.deadlineDate =deadlineDate;
     }
 
-    public Member(String name, String subType, Date joinDate) {
+    public Member(String name, String subType, int joinDuration) {
         this.name = name;
         this.subType = subType;
-        this.joinDuration = Period.between(joinDate.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate(), LocalDate.now()).getDays();
+        this.joinDuration = joinDuration;
     }
 
     public int getId() {

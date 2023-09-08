@@ -25,13 +25,18 @@ public class HelloController implements Initializable {
     Button billing_reports_btn;
     @FXML
     BorderPane container;
-    AnchorPane dashboard= FXMLLoader.load(this.getClass().getResource("dashboard.fxml"));
-    AnchorPane addMember= FXMLLoader.load(this.getClass().getResource("addMember.fxml"));
-    AnchorPane pay = FXMLLoader.load(this.getClass().getResource("pay.fxml"));
-    AnchorPane billing= FXMLLoader.load(this.getClass().getResource("billing.fxml"));
-    AnchorPane settings= FXMLLoader.load(this.getClass().getResource("settings.fxml"));
+    AnchorPane dashboard;
+    AnchorPane addMember;
+    AnchorPane pay;
+    AnchorPane billing;
+    AnchorPane settings;
 
     public HelloController() throws IOException {
+        dashboard = FXMLLoader.load(this.getClass().getResource("dashboard.fxml"));
+        addMember = FXMLLoader.load(this.getClass().getResource("addMember.fxml"));
+        pay = FXMLLoader.load(this.getClass().getResource("pay.fxml"));
+        billing = FXMLLoader.load(this.getClass().getResource("billing.fxml"));
+        settings = FXMLLoader.load(this.getClass().getResource("settings.fxml"));
     }
     @FXML
     private void setDashboard() {

@@ -12,9 +12,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Arc;
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -74,9 +76,19 @@ public class DashboardController implements Initializable {
         while(resultSet.next()){
             String name = resultSet.getString("name");
             String type = resultSet.getString("subType");
-            Date joinDate = resultSet.getDate( "joinDate");
+            Date joinDate = resultSet.getDate("joinDate");
 
-            newData.add(new Member(name, type, joinDate));
+            LocalDate localJoinDate = joinDate.toLocalDate();
+
+            // Get the current date as LocalDate
+            LocalDate currentDate = LocalDate.now();
+
+            // Calculate the difference between currentDate and localJoinDate
+            Period period = Period.between(localJoinDate, currentDate);
+
+            // Extract the number of days from the Period
+            int joinDuration = period.getDays();
+            newData.add(new Member(name, type, joinDuration));
         }
         newMembers.setItems(newData);
     }
