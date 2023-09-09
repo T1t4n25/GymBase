@@ -99,7 +99,7 @@ public class payController implements Initializable {
             String name = resultSet.getString(2);
             String status = resultSet.getString(4);
             String type = resultSet.getString(5);
-            double value = resultSet.getDouble(6);
+            int value = resultSet.getInt(6);
             Date date = resultSet.getDate(7);
             Date lastPay = resultSet.getDate(9);
             Date deadline = resultSet.getDate(8);

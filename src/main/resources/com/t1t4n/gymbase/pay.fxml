@@ -186,13 +186,13 @@
       </VBox>
       <TableView fx:id="membersTable" layoutX="4.0" layoutY="386.0" onMouseReleased="#edit" prefHeight="306.0" prefWidth="755.0">
         <columns>
-            <TableColumn fx:id="idCol" prefWidth="108.00000143051147" text="ID" />
-          <TableColumn fx:id="nameCol" prefWidth="127.19994354248047" text="الاسم" />
+            <TableColumn fx:id="idCol" prefWidth="29.599977016448975" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="186.40001678466797" text="الاسم" />
           <TableColumn fx:id="stateCol" prefWidth="81.59996795654297" text="حالة الاشتراك" />
             <TableColumn fx:id="typeCol" prefWidth="87.20001220703125" text="نوع الاشتراك" />
             <TableColumn fx:id="valueCol" prefWidth="88.00006103515625" text="قيمة الاشتراك" />
-            <TableColumn fx:id="lastPayDateCol" prefWidth="75.0" text="تاريخ اخر دفع" />
-            <TableColumn fx:id="deadLineCol" prefWidth="75.0" text="تاريخ انتهاء  الاشتراك" visible="false" />
+            <TableColumn fx:id="lastPayDateCol" prefWidth="104.0" text="تاريخ اخر دفع" />
+            <TableColumn fx:id="deadLineCol" prefWidth="111.20001220703125" text="تاريخ انتهاء  الاشتراك" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

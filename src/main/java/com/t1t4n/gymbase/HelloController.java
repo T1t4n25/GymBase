@@ -32,11 +32,11 @@ public class HelloController implements Initializable {
     AnchorPane settings;
 
     public HelloController() throws IOException {
-        dashboard = FXMLLoader.load(this.getClass().getResource("dashboard.fxml"));
-        addMember = FXMLLoader.load(this.getClass().getResource("addMember.fxml"));
-        pay = FXMLLoader.load(this.getClass().getResource("pay.fxml"));
-        billing = FXMLLoader.load(this.getClass().getResource("billing.fxml"));
-        settings = FXMLLoader.load(this.getClass().getResource("settings.fxml"));
+        dashboard = FXMLLoader.<AnchorPane>load(this.getClass().getResource("dashboard.fxml"));
+        addMember = FXMLLoader.<AnchorPane>load(this.getClass().getResource("addMember.fxml"));
+        pay = FXMLLoader.<AnchorPane>load(this.getClass().getResource("pay.fxml"));
+        billing = FXMLLoader.<AnchorPane>load(this.getClass().getResource("billing.fxml"));
+        settings = FXMLLoader.<AnchorPane>load(this.getClass().getResource("settings.fxml"));
     }
     @FXML
     private void setDashboard() {
@@ -63,7 +63,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        container.setCenter(pay);
+        container.setCenter(dashboard);
 
     }
 

@@ -56,16 +56,54 @@ public class DashboardController implements Initializable {
     TableColumn<Member, String> dueNumberCol;
     @FXML
     TableColumn<Member, String> overdueNumberCol;
+    @FXML
+    TableColumn<Member, Date> overdueDateCol;
 
     ObservableList<Member> newData, dueData, overdueData;
     ResultSet resultSet;
+    int lateSum = 0;
     public DashboardController() {
         newNameCol = new TableColumn<>();
         subTypeCol = new TableColumn<>();
         newDurationCol = new TableColumn<>();
+        overdueDateCol = new TableColumn<>();
 
     }
 
+    private void setArcs() throws SQLException {
+        //late
+        int lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
+        lateNum.setText(String.valueOf(lateSum));
+        late.setLength(lateLength);
+        //scheduled
+        int schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
+        scheduledNum.setText(String.valueOf(scheduledCash()));
+        scheduled.setLength(schLength);
+        //done
+        int doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
+        doneNum.setText(String.valueOf(doneCash()));
+        scheduled.setLength(doneLength);
+
+
+    }
+    private int doneCash() throws SQLException {
+        int doneSum = 0;
+        resultSet = DBConnection.statement.executeQuery(
+                "SELECT `subValue`FROM `members_data` WHERE MONTH(`lastPayDate`) = MONTH(CURDATE());");
+        resultSet.beforeFirst();
+        while(resultSet.next())
+            doneSum += resultSet.getInt("subValue");
+        return doneSum;
+    }
+    private int scheduledCash() throws SQLException {
+        int scheduledSum = 0;
+        resultSet = DBConnection.statement.executeQuery(
+                "SELECT `subValue`FROM `members_data` WHERE MONTH(`deadlineDate`) = MONTH(CURDATE());");
+        resultSet.beforeFirst();
+        while(resultSet.next())
+            scheduledSum += resultSet.getInt("subValue");
+        return scheduledSum;
+    }
     private void newMembersFill() throws SQLException {
 
         resultSet = DBConnection.statement.executeQuery(
@@ -79,24 +117,41 @@ public class DashboardController implements Initializable {
             Date joinDate = resultSet.getDate("joinDate");
 
             LocalDate localJoinDate = joinDate.toLocalDate();
-
-            // Get the current date as LocalDate
             LocalDate currentDate = LocalDate.now();
-
-            // Calculate the difference between currentDate and localJoinDate
             Period period = Period.between(localJoinDate, currentDate);
-
-            // Extract the number of days from the Period
             int joinDuration = period.getDays();
-            newData.add(new Member(name, type, joinDuration));
+
+            newData.add(new Member(name, type, joinDuration, true));
         }
         newMembers.setItems(newData);
     }
-    private void dueMembersFill(){
-
+    private void dueMembersFill() throws SQLException {
+        resultSet = DBConnection.statement.executeQuery(
+                "SELECT `name`, `subValue`, `number` FROM `members_data` WHERE `deadlineDate` = CURDATE();");
+        dueData = FXCollections.observableArrayList();
+        resultSet.beforeFirst();
+        while (resultSet.next()){
+            String name = resultSet.getString("name");
+            String number = resultSet.getString("number");
+            int value = resultSet.getInt("subValue");
+            dueData.add(new Member(name, number, value));
+        }
+        todayDues.setItems(dueData);
     }
-    private void overdueMembersFill(){
-
+    private void overdueMembersFill() throws SQLException {
+        resultSet = DBConnection.statement.executeQuery(
+                "SELECT `name`, `subValue`, `number`, `deadlineDate` FROM `members_data` WHERE `deadlineDate` < CURDATE();");
+        overdueData = FXCollections.observableArrayList();
+        resultSet.beforeFirst();
+        while (resultSet.next()){
+            String name = resultSet.getString("name");
+            String number = resultSet.getString("number");
+            int value = resultSet.getInt("subValue");
+            java.util.Date deadline = resultSet.getDate("deadlineDate");
+            overdueData.add(new Member(name, value, deadline, number));
+            lateSum += value;
+        }
+        overdue.setItems(overdueData);
     }
 
     @Override
@@ -105,11 +160,21 @@ public class DashboardController implements Initializable {
         newNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         subTypeCol.setCellValueFactory(new PropertyValueFactory<>("subType"));
         newDurationCol.setCellValueFactory(new PropertyValueFactory<>("joinDuration"));
+        //due today table
+        dueNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        dueCashCol.setCellValueFactory(new PropertyValueFactory<>("subValue"));
+        dueNumberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        //overdue table
+        overdueNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        overdueCashCol.setCellValueFactory(new PropertyValueFactory<>("subValue"));
+        overdueNumberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        overdueDateCol.setCellValueFactory(new PropertyValueFactory<>("deadlineDate"));
 
         try {
             newMembersFill();
-            //dueMembersFill();
-            //overdueMembersFill();
+            dueMembersFill();
+            overdueMembersFill();
+            setArcs();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

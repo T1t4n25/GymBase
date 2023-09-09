@@ -7,7 +7,7 @@ public class Member {
     String name;
     String subState;
     String subType;
-    Double subValue;
+    int subValue;
     Date subStartDate;
     Date deadlineDate;
     Date joinDate;
@@ -18,7 +18,7 @@ public class Member {
     //full constructor for data importing from database
 
 
-    public Member(int id, String name, String subState, String subType, Double subValue, Date deadlineDate, Date joinDate, String number, Date lastPayDate) {
+    public Member(int id, String name, String subState, String subType, int subValue, Date deadlineDate, Date joinDate, String number, Date lastPayDate) {
         this.id = id;
         this.name = name;
         this.subState = subState;
@@ -30,7 +30,7 @@ public class Member {
         this.lastPayDate = lastPayDate;
     }
 
-    public Member(int id, String name, String subState, String subType, Double subValue, Date date, Date lastpay, Date deadlineDate) {
+    public Member(int id, String name, String subState, String subType, int subValue, Date date, Date lastpay, Date deadlineDate) {
         this.id = id;
         this.name = name;
         this.subState = subState;
@@ -41,10 +41,23 @@ public class Member {
         this.deadlineDate =deadlineDate;
     }
 
-    public Member(String name, String subType, int joinDuration) {
+    public Member(String name, String subType, int joinDuration, boolean duration) {
         this.name = name;
         this.subType = subType;
         this.joinDuration = joinDuration;
+    }
+
+    public Member(String name, String number, int subValue) {
+        this.name = name;
+        this.subValue = subValue;
+        this.number = number;
+    }
+
+    public Member(String name, int subValue, Date deadlineDate, String number) {
+        this.name = name;
+        this.subValue = subValue;
+        this.deadlineDate = deadlineDate;
+        this.number = number;
     }
 
     public int getId() {
@@ -63,11 +76,11 @@ public class Member {
         this.name = name;
     }
 
-    public Double getSubValue() {
+    public int getSubValue() {
         return subValue;
     }
 
-    public void setSubValue(Double subValue) {
+    public void setSubValue(int subValue) {
         this.subValue = subValue;
     }
 
@@ -127,8 +140,8 @@ public class Member {
         this.lastPayDate = lastPayDate;
     }
 
-    public int getJoinDuration() {
-        return joinDuration;
+    public String getJoinDuration() {
+        return String.valueOf(joinDuration) + " يوم";
     }
 
     public void setJoinDuration(int joinDuration) {

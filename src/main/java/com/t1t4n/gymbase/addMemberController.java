@@ -56,7 +56,7 @@ public class addMemberController implements Initializable{
     ObservableList<Member> data;
 
     int id;
-    double value;
+    int value;
     String name, number, status, type;
     Date date, deadline, lastPay;
 
@@ -79,7 +79,7 @@ public class addMemberController implements Initializable{
             number = resultSet.getString(3);
             status = resultSet.getString(4);
             type = resultSet.getString(5);
-            value = resultSet.getDouble(6);
+            value = resultSet.getInt(6);
             date = resultSet.getDate(7);
             deadline = resultSet.getDate(8);
             lastPay = resultSet.getDate(9);
