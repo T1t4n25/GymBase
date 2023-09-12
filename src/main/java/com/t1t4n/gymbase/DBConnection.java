@@ -10,6 +10,8 @@ public class DBConnection {
 
     static Connection connection = null;
     static Statement statement = null;
+    static Statement statement2 = null;
+
 
 
     public static void getConnect () {
@@ -19,6 +21,9 @@ public class DBConnection {
                     "zeyad",
                     "test");
             statement = connection.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            statement2 = connection.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
         } catch (SQLException e) {
