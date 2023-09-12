@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#refreshTables" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.DashboardController">
    <children>
       <Label layoutX="1097.0" layoutY="14.0" text="الرئيسية">
          <font>
@@ -124,7 +124,6 @@
       <Arc fx:id="scheduled" fill="BLUE" layoutX="740.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
       <Arc fx:id="done" fill="LIME" layoutX="891.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
       <Arc fx:id="late" fill="RED" layoutX="1042.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <HBox alignment="CENTER" layoutX="675.0" layoutY="95.0" spacing="20.0" />
       <Circle fill="WHITE" layoutX="1042.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="WHITE" layoutX="891.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="WHITE" layoutX="740.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" />

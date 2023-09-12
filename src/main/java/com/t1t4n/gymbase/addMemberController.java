@@ -62,7 +62,7 @@ public class addMemberController implements Initializable{
 
     boolean editing = false;
     int editId;
-    String allQuery = "SELECT * FROM `members_data`";
+    final String ALLQUERY = "SELECT * FROM `members_data`";
     public addMemberController() throws SQLException {
 //        membersTable = new TableView<>();
 //        refreshTable(allQuery);
@@ -101,17 +101,19 @@ public class addMemberController implements Initializable{
         }else {
             resultSet.moveToInsertRow();
         }
-        resultSet.updateString("name", nameField.getText());
-        resultSet.updateString("number", numberField.getText());
-        resultSet.updateString("subState", subStateBox.getValue());
-        resultSet.updateString("subType", subTypeBox.getValue());
-        resultSet.updateDate("joinDate", java.sql.Date.valueOf(joinDate.getValue()));
-        if (editing)
-            resultSet.updateRow();
-        else
-            resultSet.insertRow();
-        clearFields();
-        refreshTable(allQuery);
+        if(!nameField.getText().isEmpty()) {
+            resultSet.updateString("name", nameField.getText());
+            resultSet.updateString("number", numberField.getText());
+            resultSet.updateString("subState", subStateBox.getValue());
+            resultSet.updateString("subType", subTypeBox.getValue());
+            resultSet.updateDate("joinDate", java.sql.Date.valueOf(joinDate.getValue()));
+            if (editing)
+                resultSet.updateRow();
+            else
+                resultSet.insertRow();
+            clearFields();
+        }
+        refreshTable(ALLQUERY);
     }
 
     @FXML
@@ -128,7 +130,7 @@ public class addMemberController implements Initializable{
             String bothSearch = "SELECT * FROM `members_data` WHERE `name` LIKE '%" + nameText + "%' AND `number` LIKE '%" + numberText + "%'";
             refreshTable(bothSearch);
         } else {
-            refreshTable(allQuery);
+            refreshTable(ALLQUERY);
         }
     }
     @FXML
@@ -152,6 +154,15 @@ public class addMemberController implements Initializable{
         joinDate.setValue(LocalDate.now());
         editing = false;
     }
+    @FXML
+    private void removeMember() throws SQLException {
+        if (editing){
+            String delMember = "DELETE FROM `members_data` WHERE `id` = " + editId;
+            DBConnection.statement.executeUpdate(delMember);
+        }
+        editing = false;
+        refreshTable(ALLQUERY);
+    }
 
 
     @Override
@@ -174,7 +185,7 @@ public class addMemberController implements Initializable{
         lastPayDateCol.setCellValueFactory(new PropertyValueFactory<>("lastPayDate"));
 
         try {
-            refreshTable(allQuery);
+            refreshTable(ALLQUERY);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

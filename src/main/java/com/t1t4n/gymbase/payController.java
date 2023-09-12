@@ -129,8 +129,10 @@ public class payController implements Initializable {
             resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data`");
             int months = Integer.parseInt(monthsField.getText());
             while (resultSet.next()) {
-                if (resultSet.getInt(1) == editId) {
+                if (resultSet.getInt(1) == editId && Integer.parseInt(subValueField.getText()) > 0) {
                     resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(subStartDate.getValue()));
+                    if (subType.getValue().equals("حصة"))
+                        resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusDays(1)));
                     resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusMonths(months)));
                     resultSet.updateString("subType", subType.getValue());
                     resultSet.updateDouble("subValue", Double.parseDouble(subValueField.getText()));
@@ -148,7 +150,6 @@ public class payController implements Initializable {
             }
             clearMemberFields();
         }
-
         memberTableFill();
     }
     @FXML

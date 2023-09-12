@@ -85,7 +85,7 @@
                               <Font size="19.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#clearFields" prefHeight="38.0" prefWidth="110.0" text="مسح الكل">
+                        <Button mnemonicParsing="false" onAction="#clearFields" prefHeight="38.0" prefWidth="134.0" text="مسح الخانات">
                            <font>
                               <Font size="17.0" />
                            </font>
@@ -178,5 +178,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Button layoutX="453.0" layoutY="310.0" mnemonicParsing="false" onAction="#removeMember" prefHeight="38.0" prefWidth="134.0" text="حذف العضو" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
