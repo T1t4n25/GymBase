@@ -11,6 +11,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -85,8 +86,8 @@ public class addMemberController implements Initializable{
             lastPay = resultSet.getDate(9);
 
             data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
-            membersTable.setItems(data);
         }
+            membersTable.setItems(data);
 
     }
     @FXML
@@ -107,6 +108,16 @@ public class addMemberController implements Initializable{
             resultSet.updateString("subState", subStateBox.getValue());
             resultSet.updateString("subType", subTypeBox.getValue());
             resultSet.updateDate("joinDate", java.sql.Date.valueOf(joinDate.getValue()));
+            if (subStateBox.getValue().equals("معلق") && resultSet.getString("subState").equals("نشط") && editing) {
+                int daysLeft = Period.between(LocalDate.now(), resultSet.getDate("deadlineDate").toLocalDate()).getDays();
+                if (daysLeft > 0) {
+                    resultSet.updateInt("susDaysLeft", daysLeft);
+                    resultSet.updateDate("deadlineDate", null);
+                }
+            } else if (subStateBox.getValue().equals("نشط") && resultSet.getString("subState").equals("معلق") && editing) {
+                LocalDate newDeadline = LocalDate.now().plusDays(resultSet.getInt("susDaysLeft"));
+                resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(newDeadline));
+            }
             if (editing)
                 resultSet.updateRow();
             else

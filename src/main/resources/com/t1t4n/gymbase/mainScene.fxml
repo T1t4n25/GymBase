@@ -24,7 +24,7 @@
    <right>
       <AnchorPane prefHeight="700.0" prefWidth="95.0" style="-fx-border-color: blue;" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="1.0" layoutY="162.0" spacing="60.0">
+            <VBox layoutX="1.0" layoutY="164.0" spacing="60.0">
                <children>
                   <Button fx:id="dashboard_btn" mnemonicParsing="false" onAction="#setDashboard" prefHeight="58.0" prefWidth="104.0" text="لوحة التحكم" textAlignment="CENTER" wrapText="true">
                      <font>
@@ -53,9 +53,9 @@
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="8.0" layoutY="6.0">
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="8.0" layoutY="6.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../work/captainPhoto.png" />
+                  <Image url="@../../../captainPhoto.png" />
                </image>
             </ImageView>
             <Label alignment="TOP_CENTER" layoutX="23.0" layoutY="96.0" text="العقيد">

@@ -3,7 +3,6 @@ package com.t1t4n.gymbase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -15,16 +14,6 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
 
-    @FXML
-    Button dashboard_btn;
-    @FXML
-    Button member_menu_btn;
-    @FXML
-    Button add_member_btn;
-    @FXML
-    Button billing_btn;
-    @FXML
-    Button billing_reports_btn;
     @FXML
     BorderPane container;
     AnchorPane dashboard;
@@ -77,7 +66,7 @@ public class HelloController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        container.setCenter(billing);
+        container.setCenter(dashboard);
 
     }
 

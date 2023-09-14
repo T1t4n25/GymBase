@@ -91,21 +91,20 @@ public class payController implements Initializable {
 
     @FXML
     private void memberTableFill() throws SQLException {
-        resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data`");
+        resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data` WHERE `subState` != 'معلق'");
         membersData = FXCollections.observableArrayList();
+        int id;String name;String status;String type;int value;Date date;Date lastPay;Date deadline;
         resultSet.beforeFirst();
         while (resultSet.next()) {
-            int id = resultSet.getInt(1);
-            String name = resultSet.getString(2);
-            String status = resultSet.getString(4);
-            String type = resultSet.getString(5);
-            int value = resultSet.getInt(6);
-            Date date = resultSet.getDate(7);
-            Date lastPay = resultSet.getDate(9);
-            Date deadline = resultSet.getDate(8);
-
+            id = resultSet.getInt(1);
+            name = resultSet.getString(2);
+            status = resultSet.getString(4);
+            type = resultSet.getString(5);
+            value = resultSet.getInt(6);
+            date = resultSet.getDate(7);
+            lastPay = resultSet.getDate(9);
+            deadline = resultSet.getDate(8);
             membersData.add(new Member(id, name, status, type, value, date, lastPay, deadline));
-
         }
         membersTable.setItems(membersData);
     }
@@ -120,20 +119,25 @@ public class payController implements Initializable {
             Date date = resultSet.getDate(4);
             String comment = resultSet.getString(5);
             expData.add(new Expenses(name, comment, date, value));
-            expensesTable.setItems(expData);
         }
+        expensesTable.setItems(expData);
     }
     @FXML
     private void savePayData() throws SQLException {
+        LocalDate tempDate;
         if (!subName.getText().equals("-")) {
-            resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data`");
+            resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data` WHERE `subState` != 'معلق'");
             int months = Integer.parseInt(monthsField.getText());
             while (resultSet.next()) {
                 if (resultSet.getInt(1) == editId && Integer.parseInt(subValueField.getText()) > 0) {
-                    resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(subStartDate.getValue()));
+                    resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(LocalDate.now()));
                     if (subType.getValue().equals("حصة"))
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusDays(1)));
-                    resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusMonths(months)));
+                    if (resultSet.getDate("deadlineDate") != null) {
+                        tempDate = resultSet.getDate("deadlineDate").toLocalDate().plusMonths(months);
+                        resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(tempDate));
+                    } else
+                        resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusMonths(months)));
                     resultSet.updateString("subType", subType.getValue());
                     resultSet.updateDouble("subValue", Double.parseDouble(subValueField.getText()));
                     resultSet.updateString("subState", "نشط");
@@ -180,7 +184,6 @@ public class payController implements Initializable {
                 subStartDate.setValue(new java.sql.Date((selectedMember.getJoinDate()).getTime()).toLocalDate());
             editId = selectedMember.getId();
         }
-
     }
 
     private void clearExpFields(){

@@ -207,7 +207,12 @@ public class billingController implements Initializable {
         sessionMoneyLabel.setText(String.valueOf(sessionMny) + "ج.م");
         totalMoneyLabel.setText(String.valueOf(totalMny) + "ج.م");
     }
-
+    @FXML
+    private void refreshData() throws SQLException {
+        setArcsLabels();
+        setMonthlyReportTable();
+        setIncomeTable();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
@@ -219,9 +224,7 @@ public class billingController implements Initializable {
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         inDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         try {
-            setArcsLabels();
-            setMonthlyReportTable();
-            setIncomeTable();
+            refreshData();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
