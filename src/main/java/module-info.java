@@ -2,7 +2,6 @@ module com.t1t4n.gymbase {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires org.json;
     requires javafx.graphics;
 
 
