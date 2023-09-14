@@ -26,7 +26,7 @@
                <children>
                   <Label fx:id="scheduledNum" text="---">
                      <font>
-                        <Font size="17.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
                   <Label text="مجدول لهذا الشهر">
@@ -42,7 +42,7 @@
                      <children>
                         <Label fx:id="doneNum" text="---">
                            <font>
-                              <Font size="17.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font>
                         </Label>
                         <Label text="تم التحصيل">
@@ -58,7 +58,7 @@
                <children>
                   <Label fx:id="lateNum" text="---">
                      <font>
-                        <Font size="17.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
                   <Label text="متأخر">

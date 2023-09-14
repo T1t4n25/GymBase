@@ -5,8 +5,12 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.billingController">
@@ -16,7 +20,7 @@
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="monthlyReportTable" layoutX="12.0" layoutY="121.0" prefHeight="237.0" prefWidth="431.0">
+      <TableView fx:id="monthlyReportTable" layoutX="12.0" layoutY="121.0" prefHeight="238.0" prefWidth="538.0">
         <columns>
           <TableColumn fx:id="dateCol" prefWidth="75.0" text="التاريخ" />
           <TableColumn fx:id="incomeCol" prefWidth="75.0" text="الواردات" />
@@ -27,49 +31,226 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label alignment="TOP_CENTER" layoutX="128.0" layoutY="60.0" text="احصائيات الشهور">
+      <Label alignment="TOP_CENTER" layoutX="181.0" layoutY="60.0" text="احصائيات الشهور">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Arc fx:id="BBArc" fill="BLUE" layoutX="727.0" layoutY="190.0" length="300.0" nodeOrientation="LEFT_TO_RIGHT" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Arc fx:id="fitArc" fill="LIME" layoutX="878.0" layoutY="190.0" length="300.0" nodeOrientation="LEFT_TO_RIGHT" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Arc fx:id="privateArc" fill="RED" layoutX="1029.0" layoutY="190.0" length="300.0" nodeOrientation="LEFT_TO_RIGHT" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Circle fill="WHITE" layoutX="1029.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="WHITE" layoutX="878.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="WHITE" layoutX="727.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="693.0" layoutY="155.0" text="كمال أجسام">
+      <Arc fx:id="BBArc" layoutX="730.0" layoutY="479.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.05000000074505806" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="1.0" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Arc>
+      <Arc fx:id="fitArc" layoutX="734.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Arc>
+      <Arc fx:id="privateArc" layoutX="1029.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" blue="0.7880710363388062" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Arc>
+      <Circle fill="WHITE" layoutX="1029.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="736.0" layoutY="185.0" nodeOrientation="LEFT_TO_RIGHT" radius="40.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="730.0" layoutY="472.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="698.0" layoutY="444.0" scaleX="1.5" scaleY="1.5" text="كمال أجسام">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="856.0" layoutY="155.0" text="تخسيس">
+      <Label layoutX="712.0" layoutY="155.0" scaleX="1.5" scaleY="1.5" text="تخسيس">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="1011.0" layoutY="154.0" text="برايفت">
+      <Label layoutX="1011.0" layoutY="154.0" scaleX="1.5" scaleY="1.5" text="برايفت">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <HBox layoutX="1014.0" layoutY="179.0">
+      <HBox layoutX="720.0" layoutY="180.0" scaleX="1.5" scaleY="1.5">
          <children>
-            <Label fx:id="privateLabel" text="00" />
-            <Label text="فرد" />
+            <Label fx:id="fitLabel" text="00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="فرد">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="864.0" layoutY="180.0">
+      <HBox layoutX="716.0" layoutY="470.0" scaleX="1.5" scaleY="1.5">
          <children>
-            <Label fx:id="fitLabel" text="00" />
-            <Label text="فرد" />
+            <Label fx:id="BBLabel" text="00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="فرد">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="713.0" layoutY="181.0">
+      <HBox layoutX="1011.0" layoutY="181.0" scaleX="1.5" scaleY="1.5">
          <children>
-            <Label fx:id="BBLabel" text="00" />
-            <Label text="فرد" />
+            <Label fx:id="privateLabel" text="00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="فرد">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
+      <Arc fx:id="sessionArc" layoutX="1026.0" layoutY="477.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8947368264198303" green="0.06296296417713165" blue="0.8808739185333252" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4368000030517578" green="0.4700588881969452" blue="0.8399999737739563" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Arc>
+      <Circle fill="WHITE" layoutX="1026.0" layoutY="470.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="1012.0" layoutY="441.0" scaleX="1.5" scaleY="1.5" text="حصة">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <HBox layoutX="1012.0" layoutY="468.0" scaleX="1.5" scaleY="1.5">
+         <children>
+            <Label fx:id="sessionLabel" text="00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="فرد">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="fitMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="694.0" layoutY="304.0" text="تخسيس" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="privateMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="990.0" layoutY="304.0" text="برايفت">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="BBMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="674.0" layoutY="600.0" text="كمال اجسام" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="sessionMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="1006.0" layoutY="600.0" text="حصة" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Circle fill="WHITE" layoutX="877.0" layoutY="332.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="845.0" layoutY="304.0" scaleX="1.2" scaleY="1.2" text="العدد الكلي">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <HBox layoutX="858.239990234375" layoutY="325.8399963378906" spacing="5.0">
+         <children>
+            <Label fx:id="totalLabel" scaleX="1.2" scaleY="1.2" text="00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalLabel1" scaleX="1.2" scaleY="1.2" text="فرد">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="totalMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="850.0" layoutY="349.0" text="الكلي" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="incomeTable" layoutX="14.0" layoutY="448.0" prefHeight="238.0" prefWidth="310.0">
+         <columns>
+            <TableColumn fx:id="inDateCol" prefWidth="75.0" text="التاريخ" />
+            <TableColumn fx:id="valueCol" prefWidth="75.0" text="قيمة الوارد" />
+            <TableColumn fx:id="nameCol" prefWidth="75.0" text="الاسم" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label alignment="TOP_CENTER" layoutX="120.0" layoutY="379.0" text="جدول الواردات لهذا الشهر">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="333.0" layoutY="468.0" text="واردات الشهر:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="monthIncome" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="364.0" layoutY="513.0" text="-----" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Line endX="17.40008544921875" endY="-371.0" layoutX="580.0" layoutY="371.0" startX="17.40008544921875" startY="330.60003662109375" />
    </children>
 </AnchorPane>

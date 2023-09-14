@@ -73,24 +73,23 @@ public class DashboardController implements Initializable {
     private void setArcs() throws SQLException {
         //late
         int lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
-        lateNum.setText(String.valueOf(lateSum));
+        lateNum.setText(String.valueOf(lateSum) + "ج.م");
         late.setLength(lateLength);
         lateSum = 0;
         //scheduled
         int schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
-        scheduledNum.setText(String.valueOf(scheduledCash()));
+        scheduledNum.setText(String.valueOf(scheduledCash()) + "ج.م");
         scheduled.setLength(schLength);
         //done
         int doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
-        doneNum.setText(String.valueOf(doneCash()));
+        doneNum.setText(String.valueOf(doneCash()) + "ج.م");
         scheduled.setLength(doneLength);
-
 
     }
     private int doneCash() throws SQLException {
         int doneSum = 0;
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `subValue`FROM `members_data` WHERE MONTH(`lastPayDate`) = MONTH(CURDATE());");
+                "SELECT `subValue`FROM `members_data` WHERE MONTH(`lastPayDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE());");
         resultSet.beforeFirst();
         while(resultSet.next())
             doneSum += resultSet.getInt("subValue");
@@ -99,7 +98,7 @@ public class DashboardController implements Initializable {
     private int scheduledCash() throws SQLException {
         int scheduledSum = 0;
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `subValue`, `subType` FROM `members_data` WHERE MONTH(`deadlineDate`) = MONTH(CURDATE()) AND `subState` = 'نشط'");
+                "SELECT `subValue`, `subType` FROM `members_data` WHERE (MONTH(`deadlineDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE())) AND `subState` = 'نشط'");
         resultSet.beforeFirst();
         while(resultSet.next() && !resultSet.getString("subType").equals("حصة"))
             scheduledSum += resultSet.getInt("subValue");
