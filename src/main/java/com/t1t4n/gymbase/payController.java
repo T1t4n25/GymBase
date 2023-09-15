@@ -107,6 +107,7 @@ public class payController implements Initializable {
             membersData.add(new Member(id, name, status, type, value, date, lastPay, deadline));
         }
         membersTable.setItems(membersData);
+        membersTable.refresh();
     }
     @FXML
     private void expensesTableFill() throws SQLException {

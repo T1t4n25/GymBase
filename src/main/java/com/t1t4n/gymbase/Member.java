@@ -14,10 +14,6 @@ public class Member {
     Date lastPayDate;
     String number;
     int joinDuration;
-
-    //full constructor for data importing from database
-
-
     public Member(int id, String name, String subState, String subType, int subValue, Date deadlineDate, Date joinDate, String number, Date lastPayDate) {
         this.id = id;
         this.name = name;

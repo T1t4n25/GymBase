@@ -117,7 +117,10 @@ public class addMemberController implements Initializable{
             } else if (subStateBox.getValue().equals("نشط") && resultSet.getString("subState").equals("معلق") && editing) {
                 LocalDate newDeadline = LocalDate.now().plusDays(resultSet.getInt("susDaysLeft"));
                 resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(newDeadline));
+            } else if (subStateBox.getValue().equals("غير نشط")) {
+                resultSet.updateDate("deadlineDate", null);
             }
+
             if (editing)
                 resultSet.updateRow();
             else
