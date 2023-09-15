@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.addMemberController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshTable" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.addMemberController">
    <children>
       <Label layoutX="12.0" layoutY="14.0" text="الأعضاء">
          <font>
@@ -53,12 +53,12 @@
                   </VBox>
                   <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="217.0" prefWidth="162.0" spacing="44.0">
                      <children>
-                        <TextField fx:id="nameField" alignment="TOP_RIGHT" prefHeight="28.0" prefWidth="191.0" promptText="الاسم">
+                        <TextField fx:id="nameField" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="191.0" promptText="الاسم">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="numberField" alignment="TOP_RIGHT" prefHeight="28.0" prefWidth="191.0" promptText="الهاتف">
+                        <TextField fx:id="numberField" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="191.0" promptText="الهاتف">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -137,7 +137,7 @@
                               <Font name="Arial" size="23.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="searchNameField" alignment="TOP_RIGHT" onKeyReleased="#search" prefHeight="28.0" prefWidth="191.0" promptText="بحث بالاسم">
+                        <TextField fx:id="searchNameField" alignment="TOP_LEFT" onKeyReleased="#search" prefHeight="28.0" prefWidth="191.0" promptText="بحث بالاسم">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -151,7 +151,7 @@
                               <Font name="Arial" size="23.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="searchNumberField" alignment="TOP_RIGHT" onKeyReleased="#search" prefHeight="28.0" prefWidth="191.0" promptText="بحث برقم الهاتف">
+                        <TextField fx:id="searchNumberField" alignment="TOP_LEFT" onKeyReleased="#search" prefHeight="28.0" prefWidth="191.0" promptText="بحث برقم الهاتف">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -179,6 +179,11 @@
          </columnResizePolicy>
       </TableView>
       <Button layoutX="453.0" layoutY="310.0" mnemonicParsing="false" onAction="#removeMember" prefHeight="38.0" prefWidth="134.0" text="حذف العضو" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="842.0" layoutY="291.0" mnemonicParsing="false" onAction="#clearSearchFields" prefHeight="38.0" prefWidth="134.0" text="مسح الخانات">
          <font>
             <Font size="17.0" />
          </font>

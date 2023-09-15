@@ -86,7 +86,6 @@ public class payController implements Initializable {
         expValueCol = new TableColumn<>();
         membersTable = new TableView<>();
         expensesTable = new TableView<>();
-
     }
 
     @FXML
@@ -134,7 +133,7 @@ public class payController implements Initializable {
                     resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(LocalDate.now()));
                     if (subType.getValue().equals("حصة"))
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusDays(1)));
-                    if (resultSet.getDate("deadlineDate") != null) {
+                    else if (resultSet.getDate("deadlineDate") != null) {
                         tempDate = resultSet.getDate("deadlineDate").toLocalDate().plusMonths(months);
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(tempDate));
                     } else
@@ -177,9 +176,9 @@ public class payController implements Initializable {
         if (selectedMember != null) {
             subName.setText(selectedMember.getName());
             subType.setValue(selectedMember.getSubType());
-            if (Objects.equals(selectedMember.getSubState(), "نشط") && (selectedMember.getLastPayDate() != null))
+            if (Objects.equals(selectedMember.getSubState(), "نشط") && (selectedMember.getLastPayDate() != null) && selectedMember.getDeadlineDate() != null)
                 subStartDate.setValue(new java.sql.Date((selectedMember.getDeadlineDate()).getTime()).toLocalDate());
-            else if (Objects.equals(selectedMember.getSubState(), "غير نشط"))
+            else if (Objects.equals(selectedMember.getSubState(), "غير نشط") || Objects.equals(selectedMember.getSubState(), "حصة"))
                 subStartDate.setValue(LocalDate.now());
             else
                 subStartDate.setValue(new java.sql.Date((selectedMember.getJoinDate()).getTime()).toLocalDate());
@@ -203,6 +202,7 @@ public class payController implements Initializable {
         subValueField.setText(null);
         monthsField.setText("1");
         subName.setText("-");
+        subStartDate.setValue(LocalDate.now());
     }
 
 

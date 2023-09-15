@@ -63,13 +63,9 @@ public class addMemberController implements Initializable{
 
     boolean editing = false;
     int editId;
-    final String ALLQUERY = "SELECT * FROM `members_data`";
+    public final String ALLQUERY = "SELECT * FROM `members_data`";
     public addMemberController() throws SQLException {
-//        membersTable = new TableView<>();
-//        refreshTable(allQuery);
-
     }
-
     public void refreshTable(String query) throws SQLException {
         resultSet =DBConnection.statement.executeQuery(query);
         data = FXCollections.observableArrayList();
@@ -88,6 +84,27 @@ public class addMemberController implements Initializable{
             data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
         }
             membersTable.setItems(data);
+
+    }
+    @FXML
+    public void refreshTable() throws SQLException {
+        resultSet =DBConnection.statement.executeQuery(ALLQUERY);
+        data = FXCollections.observableArrayList();
+        resultSet.beforeFirst();
+        while(resultSet.next()){
+            id = resultSet.getInt(1);
+            name = resultSet.getString(2);
+            number = resultSet.getString(3);
+            status = resultSet.getString(4);
+            type = resultSet.getString(5);
+            value = resultSet.getInt(6);
+            date = resultSet.getDate(7);
+            deadline = resultSet.getDate(8);
+            lastPay = resultSet.getDate(9);
+
+            data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
+        }
+        membersTable.setItems(data);
 
     }
     @FXML
@@ -146,6 +163,11 @@ public class addMemberController implements Initializable{
         } else {
             refreshTable(ALLQUERY);
         }
+    }
+    @FXML
+    private void clearSearchFields(){
+        searchNameField.setText(null);
+        searchNumberField.setText(null);
     }
     @FXML
     private void edit() throws SQLException {

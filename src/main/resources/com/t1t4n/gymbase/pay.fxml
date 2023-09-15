@@ -184,21 +184,21 @@
             </Button>
          </children>
       </VBox>
-      <TableView fx:id="membersTable" layoutX="4.0" layoutY="386.0" onMouseReleased="#edit" prefHeight="306.0" prefWidth="755.0">
+      <TableView fx:id="membersTable" focusTraversable="false" layoutX="8.0" layoutY="380.0" onMouseReleased="#edit" prefHeight="319.0" prefWidth="755.0">
         <columns>
-            <TableColumn fx:id="idCol" prefWidth="29.599977016448975" text="ID" />
-          <TableColumn fx:id="nameCol" prefWidth="186.40001678466797" text="الاسم" />
-          <TableColumn fx:id="stateCol" prefWidth="81.59996795654297" text="حالة الاشتراك" />
-            <TableColumn fx:id="typeCol" prefWidth="87.20001220703125" text="نوع الاشتراك" />
-            <TableColumn fx:id="valueCol" prefWidth="88.00006103515625" text="قيمة الاشتراك" />
-            <TableColumn fx:id="lastPayDateCol" prefWidth="104.0" text="تاريخ اخر دفع" />
-            <TableColumn fx:id="deadLineCol" prefWidth="111.20001220703125" text="تاريخ انتهاء  الاشتراك" />
+            <TableColumn fx:id="idCol" editable="false" prefWidth="29.599977016448975" text="ID" />
+          <TableColumn fx:id="nameCol" editable="false" prefWidth="186.40001678466797" text="الاسم" />
+          <TableColumn fx:id="stateCol" editable="false" prefWidth="81.59996795654297" text="حالة الاشتراك" />
+            <TableColumn fx:id="typeCol" editable="false" prefWidth="87.20001220703125" text="نوع الاشتراك" />
+            <TableColumn fx:id="valueCol" editable="false" prefWidth="88.00006103515625" text="قيمة الاشتراك" />
+            <TableColumn fx:id="lastPayDateCol" editable="false" prefWidth="104.0" text="تاريخ اخر دفع" />
+            <TableColumn fx:id="deadLineCol" editable="false" prefWidth="111.20001220703125" text="تاريخ انتهاء  الاشتراك" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TableView fx:id="expensesTable" layoutX="786.0" layoutY="386.0" prefHeight="306.0" prefWidth="404.0">
+      <TableView fx:id="expensesTable" focusTraversable="false" layoutX="786.0" layoutY="386.0" prefHeight="306.0" prefWidth="404.0">
          <columns>
             <TableColumn fx:id="expNameCol" prefWidth="107.19995260238647" text="البند" />
             <TableColumn fx:id="expValueCol" prefWidth="81.59996795654297" text="القيمة" />
