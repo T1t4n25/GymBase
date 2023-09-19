@@ -9,3 +9,6 @@ module com.t1t4n.gymbase {
     exports com.t1t4n.gymbase;
     
 }
+//jpackage --type exe --input . --dest . --main-jar .\GymBase.jar --main-class com.t1t4n.gymbase.Main --module-path "D:\T1t4nProject\Java\javafx-jmods-20.0.2" --add-modules javafx.controls, javafx.fxml, javafx.sql, javafx.graphics --win-shortcut --winmenu
+
+//jpackage --type exe --input . --dest . --main-jar .\GymBase.jar --main-class com.t1t4n.gymbase.Main --module-path "C:\Program Files\BellSoft\LibericaJDK-20-Full\jmods" --add-modules javafx.controls,javafx.fxml,java.sql,javafx.graphics --win-shortcut

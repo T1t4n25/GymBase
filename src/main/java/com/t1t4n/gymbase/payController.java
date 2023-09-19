@@ -106,7 +106,6 @@ public class payController implements Initializable {
             membersData.add(new Member(id, name, status, type, value, date, lastPay, deadline));
         }
         membersTable.setItems(membersData);
-        membersTable.refresh();
     }
     @FXML
     private void expensesTableFill() throws SQLException {
@@ -132,7 +131,7 @@ public class payController implements Initializable {
                 if (resultSet.getInt(1) == editId && Integer.parseInt(subValueField.getText()) > 0) {
                     resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(LocalDate.now()));
                     if (subType.getValue().equals("حصة"))
-                        resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusDays(1)));
+                        resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue()));
                     else if (resultSet.getDate("deadlineDate") != null) {
                         tempDate = resultSet.getDate("deadlineDate").toLocalDate().plusMonths(months);
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(tempDate));

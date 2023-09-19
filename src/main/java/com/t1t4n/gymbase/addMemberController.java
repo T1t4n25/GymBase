@@ -165,9 +165,10 @@ public class addMemberController implements Initializable{
         }
     }
     @FXML
-    private void clearSearchFields(){
+    private void clearSearchFields() throws SQLException {
         searchNameField.setText(null);
         searchNumberField.setText(null);
+        refreshTable();
     }
     @FXML
     private void edit() throws SQLException {

@@ -97,44 +97,46 @@ public class billingController implements Initializable {
     private void setMonthlyReportTable() throws SQLException {
         resultSet1 = DBConnection.statement.executeQuery("SELECT `id`,`date`, `value` FROM `money_in_data` ORDER BY date DESC;");
         resultSet2 = DBConnection.statement2.executeQuery("SELECT `id`, `date`, `value` FROM `expenses_data` ORDER BY date DESC;");
-        LocalDate date1, date2, date3;
+        LocalDate date1 = null, date2  = null, date3  = null;
         int incomeTotal = 0;
         int expenseTotal = 0;
         boolean firstime = true;
         monthlyData = FXCollections.observableArrayList();
         resultSet1.beforeFirst();
         resultSet2.beforeFirst();
-        do {
-            if (firstime) {
-                resultSet1.next();
-                firstime = false;
-            }
-            date1 = resultSet1.getDate("date").toLocalDate();
-            incomeTotal += resultSet1.getInt("value");
-            while (resultSet1.next()) {
-                date2 = resultSet1.getDate("date").toLocalDate();
-                if (date1.getYear() == date2.getYear() && date1.getMonth() == date2.getMonth()) {
-                    incomeTotal += resultSet1.getInt("value");
-                }else
-                    break;
-
-            }
-            while (resultSet2.next()) {
-                date3 = resultSet2.getDate("date").toLocalDate();
-                if (date3.getYear() == date1.getYear() && date3.getMonth() == date1.getMonth()) {
-                    expenseTotal += resultSet2.getInt("value");
-                } else {
-                    resultSet2.previous();
-                    break;
+        if (resultSet1.isLast()) {
+            do {
+                if (firstime) {
+                    resultSet1.next();
+                    firstime = false;
                 }
-            }
-            monthlyData.add(new FinancialReport(incomeTotal,
-                    expenseTotal,
-                    (date1.getYear() + " / " + date1.getMonthValue())));
-            incomeTotal = 0;
-            expenseTotal = 0;
-        } while (!resultSet1.isAfterLast());
-        monthlyReportTable.setItems(monthlyData);
+                date1 = resultSet1.getDate("date").toLocalDate();
+                incomeTotal += resultSet1.getInt("value");
+                while (resultSet1.next()) {
+                    date2 = resultSet1.getDate("date").toLocalDate();
+                    if (date1.getYear() == date2.getYear() && date1.getMonth() == date2.getMonth()) {
+                        incomeTotal += resultSet1.getInt("value");
+                    } else
+                        break;
+
+                }
+                while (resultSet2.next()) {
+                    date3 = resultSet2.getDate("date").toLocalDate();
+                    if (date3.getYear() == date1.getYear() && date3.getMonth() == date1.getMonth()) {
+                        expenseTotal += resultSet2.getInt("value");
+                    } else {
+                        resultSet2.previous();
+                        break;
+                    }
+                }
+                monthlyData.add(new FinancialReport(incomeTotal,
+                        expenseTotal,
+                        (date1.getYear() + " / " + date1.getMonthValue())));
+                incomeTotal = 0;
+                expenseTotal = 0;
+            } while (!resultSet1.isAfterLast());
+            monthlyReportTable.setItems(monthlyData);
+        }
     }
     private int getBBMembers() throws SQLException {
         resultSet1 = DBConnection.statement.executeQuery(

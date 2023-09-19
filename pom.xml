@@ -10,21 +10,29 @@
     <name>GymBase</name>
 
     <properties>
+        <main-class>com.t1t4n.gymbase.Main</main-class>
+        <app.name>GymBase</app.name>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
+        <windows.upgrade.uuid>92225ae2-53c0-11ee-8c99-0242ac120002</windows.upgrade.uuid>
+        <macos.sign></macos.sign>
+        <macos.sign.identity></macos.sign.identity>
+        <windows.vendor>Sample</windows.vendor>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.9.1</junit.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>19</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>19</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-controls</artifactId>-->
+<!--            <version>20</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-fxml</artifactId>-->
+<!--            <version>20</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -38,9 +46,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.32</version> <!-- Replace with the actual version -->
+        </dependency>
 
     </dependencies>
+
 
     <build>
         <plugins>
@@ -62,7 +75,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.t1t4n.gymbase.Main/com.t1t4n.gymbase.Main</mainClass>
+                            <mainClass>com.t1t4n.gymbase/com.t1t4n.gymbase.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -95,5 +108,24 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <!-- Here we are processing the platform-specific jpackage command files, adding in Maven
+                 properties for configuration. -->
+                <directory>${project.basedir}/src/packaging</directory>
+                <filtering>true</filtering>
+                <targetPath>${project.build.directory}/packaging</targetPath>
+            </resource>
+            <!-- Add the default resource path back in - by overriding above it disables the default -->
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources/build-info/</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
     </build>
 </project>

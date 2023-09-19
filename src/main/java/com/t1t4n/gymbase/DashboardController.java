@@ -72,16 +72,21 @@ public class DashboardController implements Initializable {
 
     private void setArcs() throws SQLException {
         //late
-        int lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
-        lateNum.setText(String.valueOf(lateSum) + "ج.م");
+        int lateLength = 0;
+        int schLength = 0;
+        int doneLength = 0;
+        if((scheduledCash() + doneCash() > 0)) {
+            lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
+            schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
+            doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
+        }
+        lateNum.setText(lateSum + "ج.م");
         late.setLength(lateLength);
         lateSum = 0;
         //scheduled
-        int schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
-        scheduledNum.setText(String.valueOf(scheduledCash()) + "ج.م");
+        scheduledNum.setText(scheduledCash() + "ج.م");
         scheduled.setLength(schLength);
         //done
-        int doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
         doneNum.setText(String.valueOf(doneCash()) + "ج.م");
         scheduled.setLength(doneLength);
 

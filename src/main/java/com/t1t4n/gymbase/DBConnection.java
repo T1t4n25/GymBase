@@ -12,14 +12,15 @@ public class DBConnection {
     static Statement statement = null;
     static Statement statement2 = null;
 
-
+    static String username = "3akeed";
+    static String password = "3akeedGymBase251123";
 
     public static void getConnect () {
         try {
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/gymdata",
-                    "zeyad",
-                    "test");
+                    username,
+                    password);
             statement = connection.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
