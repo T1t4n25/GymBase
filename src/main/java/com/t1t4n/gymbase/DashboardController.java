@@ -88,7 +88,7 @@ public class DashboardController implements Initializable {
         scheduled.setLength(schLength);
         //done
         doneNum.setText(String.valueOf(doneCash()) + "ج.م");
-        scheduled.setLength(doneLength);
+        scheduled.setLength(360 - doneLength);
 
     }
     private int doneCash() throws SQLException {

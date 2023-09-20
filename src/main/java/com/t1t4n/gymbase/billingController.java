@@ -104,7 +104,7 @@ public class billingController implements Initializable {
         monthlyData = FXCollections.observableArrayList();
         resultSet1.beforeFirst();
         resultSet2.beforeFirst();
-        if (resultSet1.isLast()) {
+        if (!resultSet1.isLast()) {
             do {
                 if (firstime) {
                     resultSet1.next();

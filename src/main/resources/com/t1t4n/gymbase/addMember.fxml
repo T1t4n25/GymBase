@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshTable" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.addMemberController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshTable" prefHeight="700.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.addMemberController">
    <children>
       <Label layoutX="12.0" layoutY="14.0" text="الأعضاء">
          <font>
@@ -23,7 +23,7 @@
       </Label>
       <Line endX="597.4000244140625" layoutX="597.0" layoutY="351.0" startX="-597.0" />
       <Line endX="0.20001220703125" endY="0.5" layoutX="609.0" layoutY="350.0" startX="0.20001220703125" startY="-350.0" />
-      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="8.0" layoutY="40.0" spacing="8.0">
+      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="8.0" layoutY="40.0" prefHeight="300.0" prefWidth="590.0" spacing="8.0">
          <children>
             <Label text="إضافة عضو">
                <font>
@@ -32,103 +32,134 @@
             </Label>
             <HBox prefHeight="207.0" prefWidth="590.0" spacing="10.0">
                <children>
-                  <VBox alignment="TOP_RIGHT" prefHeight="206.0" prefWidth="110.0" spacing="55.0">
+                  <HBox alignment="TOP_CENTER" spacing="5.0">
                      <children>
-                        <Label alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="105.0" text="الاسم" textAlignment="RIGHT">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="105.0" text="الهاتف" textAlignment="RIGHT">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="105.0" text="نوع الاشتراك" textAlignment="RIGHT">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="217.0" prefWidth="162.0" spacing="44.0">
-                     <children>
-                        <TextField fx:id="nameField" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="191.0" promptText="الاسم">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="numberField" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="191.0" promptText="الهاتف">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </TextField>
-                        <ChoiceBox fx:id="subTypeBox" prefHeight="46.0" prefWidth="190.0">
+                        <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="206.0" prefWidth="110.0" spacing="46.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="105.0" text="الاسم" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="105.0" text="الهاتف" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="105.0" text="نوع الاشتراك" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <padding>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                              <Insets top="6.0" />
                            </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </ChoiceBox>
+                        </VBox>
+                        <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="217.0" prefWidth="162.0" spacing="37.0">
+                           <children>
+                              <TextField fx:id="nameField" alignment="TOP_LEFT" minHeight="-Infinity" prefHeight="40.0" prefWidth="191.0" promptText="الاسم">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="numberField" alignment="TOP_LEFT" minHeight="-Infinity" prefHeight="40.0" prefWidth="191.0" promptText="الهاتف">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </TextField>
+                              <ChoiceBox fx:id="subTypeBox" minHeight="-Infinity" prefHeight="40.0" prefWidth="190.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
-                  <VBox alignment="TOP_RIGHT" prefHeight="206.0" prefWidth="134.0" spacing="56.0">
+                  </HBox>
+                  <VBox spacing="42.0">
                      <children>
-                        <Label alignment="TOP_RIGHT" prefHeight="34.0" prefWidth="136.0" text="تاريخ الانضمام" textAlignment="RIGHT">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="28.0" prefWidth="110.0" text="حالة الاشتراك" textAlignment="RIGHT">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                        <Button mnemonicParsing="false" onAction="#clearFields" prefHeight="38.0" prefWidth="134.0" text="مسح الخانات">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-                  <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="218.0" prefWidth="150.0" spacing="44.0">
-                     <children>
-                        <DatePicker fx:id="joinDate" promptText="التاريخ">
-                           <padding>
-                              <Insets bottom="4.0" top="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </DatePicker>
-                        <ChoiceBox fx:id="subStateBox" prefHeight="46.0" prefWidth="190.0">
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </ChoiceBox>
-                        <Button mnemonicParsing="false" onAction="#saveMemberData" prefHeight="38.0" prefWidth="201.0" text="حفظ البيانات">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Button>
+                        <HBox spacing="11.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefHeight="206.0" prefWidth="134.0" spacing="38.0">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" prefHeight="34.0" prefWidth="136.0" text="تاريخ الانضمام" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_CENTER" prefHeight="28.0" prefWidth="134.0" text="حالة الاشتراك" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="6.0" top="4.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="170.0" prefWidth="150.0" spacing="31.0">
+                                 <children>
+                                    <DatePicker fx:id="joinDate" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="150.0" promptText="التاريخ">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </DatePicker>
+                                    <ChoiceBox fx:id="subStateBox" minHeight="-Infinity" prefHeight="40.0" prefWidth="190.0">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Button defaultButton="true" minHeight="-Infinity" mnemonicParsing="false" onAction="#saveMemberData" prefHeight="40.0" prefWidth="290.0" text="حفظ البيانات">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <HBox spacing="6.0">
+                                 <children>
+                                    <Button cancelButton="true" mnemonicParsing="false" onAction="#clearFields" prefHeight="37.0" prefWidth="150.0" text="مسح الخانات">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#removeMember" prefHeight="39.0" prefWidth="134.0" text="حذف العضو" textFill="RED">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                </children>
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="667.0" layoutY="40.0" spacing="100.0">
+      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="699.0" layoutY="40.0" spacing="22.0">
          <children>
             <Label text="بحث عن عضو">
                <font>
                   <Font size="30.0" />
                </font>
+               <padding>
+                  <Insets bottom="70.0" />
+               </padding>
             </Label>
-            <HBox alignment="TOP_CENTER" spacing="100.0">
+            <HBox alignment="TOP_CENTER" spacing="43.0">
                <children>
                   <VBox alignment="TOP_CENTER" spacing="20.0">
                      <children>
@@ -160,33 +191,25 @@
                   </VBox>
                </children>
             </HBox>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#clearSearchFields" prefHeight="38.0" prefWidth="134.0" text="مسح الخانات">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
-      <TableView fx:id="membersTable" layoutX="2.0" layoutY="354.0" nodeOrientation="RIGHT_TO_LEFT" onMouseReleased="#edit" prefHeight="346.0" prefWidth="1190.0">
+      <TableView fx:id="membersTable" layoutX="2.0" layoutY="354.0" nodeOrientation="RIGHT_TO_LEFT" onMouseReleased="#edit" prefHeight="341.0" prefWidth="1190.0">
         <columns>
-            <TableColumn fx:id="idCol" editable="false" prefWidth="95.19995272159576" text="الرقم المرجعي" />
-          <TableColumn fx:id="nameCol" editable="false" prefWidth="203.99999237060547" text="الاسم" />
-          <TableColumn fx:id="subStateCol" editable="false" prefWidth="128.0" text="حالة الاشتراك" />
-            <TableColumn fx:id="subTypeCol" editable="false" prefWidth="75.0" text="نوع الاشتراك" />
-            <TableColumn fx:id="subValueCol" editable="false" prefWidth="75.0" text="قيمة الاشتراك" />
-            <TableColumn fx:id="deadlineDateCol" editable="false" prefWidth="75.0" text="تاريخ نهاية الاشتراك" />
-            <TableColumn fx:id="lastPayDateCol" prefWidth="75.0" text="تاريخ اخر دفع" />
-            <TableColumn fx:id="joinDateCol" editable="false" prefWidth="75.0" text="تاريخ الانضمام" />
-            <TableColumn fx:id="numberCol" editable="false" prefWidth="75.0" text="رقم الهاتف" />
+            <TableColumn fx:id="idCol" editable="false" prefWidth="101.60009765625" text="الرقم المرجعي" />
+          <TableColumn fx:id="nameCol" editable="false" prefWidth="248.0" text="الاسم" />
+          <TableColumn fx:id="subStateCol" editable="false" prefWidth="127.199951171875" text="حالة الاشتراك" />
+            <TableColumn fx:id="subTypeCol" editable="false" prefWidth="98.4000244140625" text="نوع الاشتراك" />
+            <TableColumn fx:id="subValueCol" editable="false" prefWidth="99.20001220703125" text="قيمة الاشتراك" />
+            <TableColumn fx:id="deadlineDateCol" editable="false" prefWidth="155.20001220703125" text="تاريخ نهاية الاشتراك" />
+            <TableColumn fx:id="lastPayDateCol" prefWidth="104.0" text="تاريخ اخر دفع" />
+            <TableColumn fx:id="joinDateCol" editable="false" minWidth="4.800048828125" prefWidth="116.79998779296875" text="تاريخ الانضمام" />
+            <TableColumn fx:id="numberCol" editable="false" prefWidth="144.0" text="رقم الهاتف" />
         </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
       </TableView>
-      <Button layoutX="453.0" layoutY="310.0" mnemonicParsing="false" onAction="#removeMember" prefHeight="38.0" prefWidth="134.0" text="حذف العضو" textFill="RED">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="842.0" layoutY="291.0" mnemonicParsing="false" onAction="#clearSearchFields" prefHeight="38.0" prefWidth="134.0" text="مسح الخانات">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

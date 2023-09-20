@@ -56,7 +56,7 @@ public class HelloController implements Initializable {
         DBConnection.statement.executeUpdate(
                 "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 7 DAY) AND subState = 'نشط';");
         DBConnection.statement.executeUpdate(
-                "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 0 DAY) AND subState = 'نشط' AND subType = 'حصة';");
+                "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate != NOW() AND subState = 'نشط' AND subType = 'حصة';");
     }
 
     @Override
