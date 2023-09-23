@@ -33,6 +33,12 @@ public class DashboardController implements Initializable {
     @FXML
     Label scheduledNum;
     @FXML
+    Label lateMem;
+    @FXML
+    Label schMem;
+    @FXML
+    Label doneMem;
+    @FXML
     TableView<Member> newMembers;
     @FXML
     TableView<Member> todayDues;
@@ -62,6 +68,9 @@ public class DashboardController implements Initializable {
     ObservableList<Member> newData, dueData, overdueData;
     ResultSet resultSet;
     int lateSum = 0;
+    int lateMemSum = 0;
+    int schMemSum = 0;
+    int doneMemSum = 0;
     public DashboardController() {
         newNameCol = new TableColumn<>();
         subTypeCol = new TableColumn<>();
@@ -94,29 +103,33 @@ public class DashboardController implements Initializable {
     private int doneCash() throws SQLException {
         int doneSum = 0;
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `subValue`FROM `members_data` WHERE MONTH(`lastPayDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE());");
+                "SELECT `subValue`FROM `members_data` WHERE MONTH(`lastPayDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE()) AND `subType` != 'حصة';");
         resultSet.beforeFirst();
-        while(resultSet.next())
+        while(resultSet.next()) {
             doneSum += resultSet.getInt("subValue");
+            doneMemSum++;
+        }
         return doneSum;
     }
     private int scheduledCash() throws SQLException {
         int scheduledSum = 0;
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `subValue`, `subType` FROM `members_data` WHERE (MONTH(`deadlineDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE())) AND `subState` = 'نشط'");
+                "SELECT `subValue`, `subType` FROM `members_data` WHERE (MONTH(`deadlineDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE())) AND `subState` = 'نشط' AND `subType` != 'حصة'");
         resultSet.beforeFirst();
-        while(resultSet.next() && !resultSet.getString("subType").equals("حصة"))
+        while(resultSet.next()) {
             scheduledSum += resultSet.getInt("subValue");
+            schMemSum++;
+        }
         return scheduledSum;
     }
     private void newMembersFill() throws SQLException {
 
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND `joinDate` >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"
+                "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND `joinDate` >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND `subType` != 'حصة';"
         );
         newData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
-        while(resultSet.next() && !resultSet.getString("subType").equals("حصة")){
+        while(resultSet.next()){
                 String name = resultSet.getString("name");
                 String type = resultSet.getString("subType");
                 Date joinDate = resultSet.getDate("joinDate");
@@ -145,16 +158,17 @@ public class DashboardController implements Initializable {
     }
     private void overdueMembersFill() throws SQLException {
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subValue`, `subType`,  `number`, `deadlineDate` FROM `members_data` WHERE `deadlineDate` < CURDATE() AND `subState` = 'نشط';");
+                "SELECT `name`, `subValue`, `number`, `deadlineDate` FROM `members_data` WHERE `deadlineDate` < CURDATE() AND `subState` = 'نشط' AND `subType` != 'حصة';");
         overdueData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
-        while (resultSet.next() && !resultSet.getString("subType").equals("حصة")){
+        while (resultSet.next()){
             String name = resultSet.getString("name");
             String number = resultSet.getString("number");
             int value = resultSet.getInt("subValue");
             java.util.Date deadline = resultSet.getDate("deadlineDate");
             overdueData.add(new Member(name, value, deadline, number));
             lateSum += value;
+            lateMemSum++;
         }
         overdue.setItems(overdueData);
     }
