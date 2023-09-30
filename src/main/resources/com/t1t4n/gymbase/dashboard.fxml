@@ -18,8 +18,8 @@
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
-      <Line endX="597.4000244140625" layoutX="597.0" layoutY="350.0" startX="-597.0" />
-      <Line endX="0.20001220703125" endY="406.0" layoutX="597.0" layoutY="294.0" startX="0.20001220703125" startY="-294.0" />
+      <Line endX="597.4000244140625" layoutX="597.0" layoutY="350.0" startX="-597.0" styleClass="line" />
+      <Line endX="0.20001220703125" endY="406.0" layoutX="597.0" layoutY="294.0" startX="0.20001220703125" startY="-294.0" styleClass="line" />
       <HBox alignment="CENTER" layoutX="627.0" layoutY="239.0" prefHeight="100.0" prefWidth="530.0" spacing="10.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="150.0" spacing="10.0">
@@ -112,12 +112,12 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Arc fx:id="scheduled" fill="BLUE" layoutX="733.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Arc fx:id="done" fill="LIME" layoutX="894.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Arc fx:id="late" fill="RED" layoutX="1052.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND" />
-      <Circle fill="WHITE" layoutX="1052.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Circle fill="WHITE" layoutX="894.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Circle fill="WHITE" layoutX="733.0" layoutY="153.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
+      <Arc fx:id="scheduled" fill="BLUE" layoutX="733.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND" />
+      <Arc fx:id="done" fill="LIME" layoutX="894.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND" />
+      <Arc fx:id="late" fill="RED" layoutX="1052.0" layoutY="160.0" length="300.0" radiusX="64.0" radiusY="64.0" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND" />
+      <Circle layoutX="1052.0" layoutY="153.0" radius="47.0" styleClass="theme-circles" />
+      <Circle layoutX="894.0" layoutY="153.0" radius="47.0" styleClass="theme-circles" />
+      <Circle layoutX="733.0" layoutY="153.0" radius="47.0" styleClass="theme-circles" />
       <Label fx:id="lateMem" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="1033.0" layoutY="140.0" text="متأخر">
          <font>
             <Font size="17.0" />

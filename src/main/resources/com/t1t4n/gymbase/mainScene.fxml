@@ -22,69 +22,81 @@
       </AnchorPane>
    </center>
    <right>
-      <AnchorPane minWidth="-Infinity" prefHeight="700.0" prefWidth="118.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="532.0" prefWidth="113.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="1.0" layoutY="164.0" prefHeight="532.0" prefWidth="116.0" spacing="60.0">
+            <VBox alignment="TOP_CENTER" prefWidth="114.0">
                <children>
-                  <Button fx:id="dashboard_btn" mnemonicParsing="false" onAction="#setDashboard" prefHeight="58.0" prefWidth="117.0" text="لوحة التحكم" textAlignment="CENTER" wrapText="true">
+                  <ImageView fitHeight="90.0" fitWidth="90.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../GymBase-logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="TOP_CENTER" text="Pro Gym">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.8631578683853149" green="0.00959064345806837" blue="0.00959064345806837" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="0.45185184478759766" blue="0.45185184478759766" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label text="Body building">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="136.0" text="&amp; Fittness">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox spacing="30.0">
+               <children>
+                  <Button fx:id="dashboard_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setDashboard" prefHeight="58.0" prefWidth="117.0" text="لوحة التحكم" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="billing_btn1" mnemonicParsing="false" onAction="#setAddMember" prefHeight="58.0" prefWidth="118.0" text="قائمة الأعضاء" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAddMember" prefHeight="58.0" prefWidth="118.0" text="قائمة الأعضاء" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="billing_btn" mnemonicParsing="false" onAction="#setPay" prefHeight="58.0" prefWidth="117.0" text="الدفع" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setPay" prefHeight="58.0" prefWidth="117.0" text="الدفع" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="billing_reports_btn" mnemonicParsing="false" onAction="#setBilling" prefHeight="58.0" prefWidth="118.0" text="الماليات" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_reports_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBilling" prefHeight="58.0" prefWidth="118.0" text="الماليات" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="add_member_btn" mnemonicParsing="false" onAction="#setSettings" prefHeight="58.0" prefWidth="104.0" text="الأعدادات" textAlignment="CENTER" visible="false" wrapText="true">
+                  <Button fx:id="add_member_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setSettings" prefHeight="58.0" prefWidth="116.0" text="الأعدادات" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="16.0" layoutY="6.0" preserveRatio="true">
-               <image>
-                  <Image url="@../../../captainPhoto.png" />
-               </image>
-            </ImageView>
-            <Label alignment="TOP_CENTER" layoutX="33.0" layoutY="96.0" text="العقيد">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.8631578683853149" green="0.00959064345806837" blue="0.00959064345806837" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="0.45185184478759766" blue="0.45185184478759766" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="28.0" layoutY="131.0" text="لكمال الأجسام">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
          </children>
-      </AnchorPane>
+      </VBox>
    </right>
 </BorderPane>

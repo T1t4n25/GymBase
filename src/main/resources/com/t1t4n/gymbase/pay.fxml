@@ -131,8 +131,8 @@
             </HBox>
          </children>
       </VBox>
-      <Line endX="597.4000244140625" layoutX="599.0" layoutY="374.0" startX="-597.0" />
-      <Line endX="48.20001220703125" endY="348.0" layoutX="725.0" layoutY="352.0" startX="50.0" startY="-352.0" />
+      <Line endX="597.4000244140625" layoutX="599.0" layoutY="374.0" startX="-597.0" styleClass="line" />
+      <Line endX="48.20001220703125" endY="348.0" layoutX="725.0" layoutY="352.0" startX="50.0" startY="-352.0" styleClass="line" />
       <VBox alignment="TOP_CENTER" layoutX="793.0" layoutY="42.0" spacing="10.0">
          <children>
             <Label alignment="TOP_CENTER" text="تسجيل مصروفات الصالة" textAlignment="CENTER">

@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshData" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.billingController">
    <children>
-      <Line endX="17.40008544921875" endY="-371.0" layoutX="580.0" layoutY="371.0" startX="17.40008544921875" startY="330.60003662109375" />
+      <Line endX="17.40008544921875" endY="-371.0" layoutX="580.0" layoutY="371.0" startX="17.40008544921875" startY="330.60003662109375" styleClass="line" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="66.0" layoutX="-6.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="1207.0" />
       <Label layoutX="13.0" layoutY="14.0" text="الماليات">
          <font>
@@ -64,7 +64,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Arc fx:id="BBArc" layoutX="730.0" layoutY="479.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+      <Arc fx:id="BBArc" layoutX="730.0" layoutY="479.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -81,7 +81,7 @@
                </stops>
             </LinearGradient>
          </fill></Arc>
-      <Arc fx:id="fitArc" layoutX="734.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+      <Arc fx:id="fitArc" layoutX="734.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -98,7 +98,7 @@
                </stops>
             </LinearGradient>
          </fill></Arc>
-      <Arc fx:id="privateArc" layoutX="1029.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+      <Arc fx:id="privateArc" layoutX="1029.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -115,10 +115,10 @@
                </stops>
             </LinearGradient>
          </fill></Arc>
-      <Circle fill="WHITE" layoutX="1029.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Circle fill="WHITE" layoutX="736.0" layoutY="185.0" nodeOrientation="LEFT_TO_RIGHT" radius="40.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Circle fill="WHITE" layoutX="730.0" layoutY="472.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Arc fx:id="sessionArc" layoutX="1026.0" layoutY="477.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" type="ROUND">
+      <Circle layoutX="1029.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Circle layoutX="736.0" layoutY="185.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Circle layoutX="730.0" layoutY="472.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Arc fx:id="sessionArc" layoutX="1026.0" layoutY="477.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -136,8 +136,8 @@
             </LinearGradient>
          </fill>
       </Arc>
-      <Circle fill="WHITE" layoutX="1026.0" layoutY="470.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
-      <Label layoutX="698.0" layoutY="444.0" scaleX="1.5" scaleY="1.5" text="كمال أجسام">
+      <Circle layoutX="1026.0" layoutY="470.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Label layoutX="697.0" layoutY="451.0" scaleX="1.5" scaleY="1.5" text="كمال أجسام">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -152,7 +152,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Circle fill="WHITE" layoutX="877.0" layoutY="332.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" styleClass="circle" />
+      <Circle layoutX="877.0" layoutY="332.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
       <HBox layoutX="720.0" layoutY="180.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="fitLabel" text="00">
@@ -165,7 +165,7 @@
                </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="716.0" layoutY="470.0" scaleX="1.5" scaleY="1.5">
+      <HBox layoutX="715.0" layoutY="477.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="BBLabel" text="00">
                <font>

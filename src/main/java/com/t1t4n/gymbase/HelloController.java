@@ -66,7 +66,7 @@ public class HelloController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        container.setCenter(dashboard);
+        container.setCenter(settings);
 
     }
 
