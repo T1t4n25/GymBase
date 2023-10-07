@@ -3,8 +3,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -16,19 +19,40 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshData" prefHeight="700.0" prefWidth="1194.4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.billingController">
    <children>
+      <VBox alignment="TOP_CENTER" layoutX="626.0" layoutY="73.0" spacing="10.0">
+         <children>
+            <Label alignment="TOP_CENTER" text="احصاء المشتركين والمدفوع هذا الشهر منهم">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <HBox spacing="25.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="266.0" strokeType="INSIDE" styleClass="theme-rectangles" width="259.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="266.0" layoutX="10.0" layoutY="10.0" strokeType="INSIDE" styleClass="theme-rectangles" width="259.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="257.0" prefWidth="543.0" spacing="25.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="266.0" strokeType="INSIDE" styleClass="theme-rectangles" width="259.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="266.0" layoutX="10.0" layoutY="10.0" strokeType="INSIDE" styleClass="theme-rectangles" width="259.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
       <Line endX="17.40008544921875" endY="-371.0" layoutX="580.0" layoutY="371.0" startX="17.40008544921875" startY="330.60003662109375" styleClass="line" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="66.0" layoutX="-6.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="1207.0" />
-      <Label layoutX="13.0" layoutY="14.0" text="الماليات">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00d773" height="66.0" layoutX="-6.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="1207.0" />
+      <Label layoutX="66.0" layoutY="9.0" text="الماليات">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="monthlyReportTable" layoutX="12.0" layoutY="121.0" prefHeight="238.0" prefWidth="538.0">
+      <TableView fx:id="monthlyReportTable" layoutX="12.0" layoutY="121.0" prefHeight="238.0" prefWidth="572.0">
         <columns>
-          <TableColumn fx:id="dateCol" prefWidth="75.0" text="التاريخ" />
-          <TableColumn fx:id="incomeCol" prefWidth="75.0" text="الواردات" />
-            <TableColumn fx:id="expensesCol" prefWidth="75.0" text="المصروفات" />
-            <TableColumn fx:id="profitCol" prefWidth="75.0" text="المكسب المحتسب" />
+          <TableColumn fx:id="dateCol" prefWidth="134.3998966217041" text="التاريخ" />
+          <TableColumn fx:id="incomeCol" prefWidth="137.60003662109375" text="الواردات" />
+            <TableColumn fx:id="expensesCol" prefWidth="127.20001220703125" text="المصروفات" />
+            <TableColumn fx:id="profitCol" prefWidth="133.60000610351562" text="المكسب المحتسب" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -39,7 +63,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TableView fx:id="incomeTable" layoutX="14.0" layoutY="448.0" prefHeight="238.0" prefWidth="310.0">
+      <TableView fx:id="incomeTable" layoutX="14.0" layoutY="448.0" prefHeight="238.0" prefWidth="433.0">
          <columns>
             <TableColumn fx:id="inDateCol" prefWidth="75.0" text="التاريخ" />
             <TableColumn fx:id="valueCol" prefWidth="75.0" text="قيمة الوارد" />
@@ -54,17 +78,31 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="333.0" layoutY="468.0" text="واردات الشهر:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="monthIncome" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="364.0" layoutY="513.0" text="-----" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Label>
-      <Arc fx:id="BBArc" layoutX="730.0" layoutY="479.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
+      <VBox alignment="TOP_CENTER" layoutX="461.0" layoutY="468.0" spacing="10.0">
+         <children>
+            <Label alignment="TOP_CENTER" text="واردات الشهر:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="monthIncome" alignment="TOP_CENTER" contentDisplay="CENTER" text="-----" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" text="مصروفات الشهر:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="monthExpenses" alignment="TOP_CENTER" contentDisplay="CENTER" text="-----" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Arc fx:id="BBArc" layoutX="750.0" layoutY="510.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -81,7 +119,7 @@
                </stops>
             </LinearGradient>
          </fill></Arc>
-      <Arc fx:id="fitArc" layoutX="734.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
+      <Arc fx:id="fitArc" layoutX="754.0" layoutY="234.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -97,8 +135,9 @@
                   </Stop>
                </stops>
             </LinearGradient>
-         </fill></Arc>
-      <Arc fx:id="privateArc" layoutX="1029.0" layoutY="190.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
+         </fill>
+      </Arc>
+      <Arc fx:id="privateArc" layoutX="1049.0" layoutY="234.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -115,10 +154,10 @@
                </stops>
             </LinearGradient>
          </fill></Arc>
-      <Circle layoutX="1029.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
-      <Circle layoutX="736.0" layoutY="185.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
-      <Circle layoutX="730.0" layoutY="472.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
-      <Arc fx:id="sessionArc" layoutX="1026.0" layoutY="477.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
+      <Circle layoutX="1049.0" layoutY="227.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Circle layoutX="756.0" layoutY="229.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Circle layoutX="750.0" layoutY="503.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Arc fx:id="sessionArc" layoutX="1046.0" layoutY="509.0" length="300.0" radiusX="64.0" radiusY="64.0" scaleX="1.5" scaleY="1.5" startAngle="90.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="arcs" type="ROUND">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -136,24 +175,24 @@
             </LinearGradient>
          </fill>
       </Arc>
-      <Circle layoutX="1026.0" layoutY="470.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
-      <Label layoutX="697.0" layoutY="451.0" scaleX="1.5" scaleY="1.5" text="كمال أجسام">
+      <Circle layoutX="1046.0" layoutY="502.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <Label layoutX="717.0" layoutY="482.0" scaleX="1.5" scaleY="1.5" text="كمال أجسام">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="714.0" layoutY="155.0" scaleX="1.5" scaleY="1.5" text="تخسيس">
+      <Label layoutX="734.0" layoutY="199.0" scaleX="1.5" scaleY="1.5" text="تخسيس">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="1011.0" layoutY="154.0" scaleX="1.5" scaleY="1.5" text="برايفت">
+      <Label layoutX="1031.0" layoutY="198.0" scaleX="1.5" scaleY="1.5" text="برايفت">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Circle layoutX="877.0" layoutY="332.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
-      <HBox layoutX="720.0" layoutY="180.0" scaleX="1.5" scaleY="1.5">
+      <Circle layoutX="898.0" layoutY="395.0" nodeOrientation="LEFT_TO_RIGHT" radius="47.0" scaleX="1.2" scaleY="1.2" styleClass="theme-circles" />
+      <HBox layoutX="740.0" layoutY="224.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="fitLabel" text="00">
                <font>
@@ -165,7 +204,7 @@
                </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="715.0" layoutY="477.0" scaleX="1.5" scaleY="1.5">
+      <HBox layoutX="735.0" layoutY="508.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="BBLabel" text="00">
                <font>
@@ -177,7 +216,7 @@
                </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="1011.0" layoutY="181.0" scaleX="1.5" scaleY="1.5">
+      <HBox layoutX="1031.0" layoutY="225.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="privateLabel" text="00">
                <font>
@@ -191,12 +230,12 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="1012.0" layoutY="441.0" scaleX="1.5" scaleY="1.5" text="حصة">
+      <Label layoutX="1032.0" layoutY="473.0" scaleX="1.5" scaleY="1.5" text="حصة">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <HBox layoutX="1012.0" layoutY="468.0" scaleX="1.5" scaleY="1.5">
+      <HBox layoutX="1032.0" layoutY="500.0" scaleX="1.5" scaleY="1.5">
          <children>
             <Label fx:id="sessionLabel" text="00">
                <font>
@@ -210,32 +249,32 @@
             </Label>
          </children>
       </HBox>
-      <Label fx:id="fitMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="694.0" layoutY="304.0" text="تخسيس" textAlignment="CENTER">
+      <Label fx:id="fitMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="714.0" layoutY="342.0" text="تخسيس" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="privateMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="990.0" layoutY="304.0" text="برايفت">
+      <Label fx:id="privateMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="1010.0" layoutY="342.0" text="برايفت">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="BBMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="674.0" layoutY="600.0" text="كمال اجسام" textAlignment="CENTER">
+      <Label fx:id="BBMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="694.0" layoutY="621.0" text="كمال اجسام" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="sessionMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="1006.0" layoutY="600.0" text="حصة" textAlignment="CENTER">
+      <Label fx:id="sessionMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="1026.0" layoutY="622.0" text="حصة" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="845.0" layoutY="304.0" scaleX="1.2" scaleY="1.2" text="العدد الكلي">
+      <Label layoutX="866.0" layoutY="367.0" scaleX="1.2" scaleY="1.2" text="العدد الكلي">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <HBox layoutX="858.239990234375" layoutY="325.8399963378906" spacing="5.0">
+      <HBox layoutX="879.239990234375" layoutY="388.8399963378906" spacing="5.0">
          <children>
             <Label fx:id="totalLabel" scaleX="1.2" scaleY="1.2" text="00">
                <font>
@@ -249,10 +288,16 @@
             </Label>
          </children>
       </HBox>
-      <Label fx:id="totalMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="850.0" layoutY="349.0" text="الكلي" textAlignment="CENTER">
+      <Label fx:id="totalMoneyLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="871.0" layoutY="412.0" text="الكلي" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <ImageView fitHeight="69.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../_0005_invest-monitor.svg.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="106.0" layoutY="55.0" startX="-110.0" styleClass="line" />
    </children>
 </AnchorPane>

@@ -8,6 +8,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -16,14 +18,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#refreshTable" prefHeight="700.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.addMemberController">
    <children>
-      <Label layoutX="12.0" layoutY="14.0" text="الأعضاء">
+      <Label layoutX="66.0" layoutY="9.0" text="الأعضاء">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
       <Line endX="597.4000244140625" layoutX="597.0" layoutY="351.0" startX="-597.0" styleClass="line" />
-      <Line endX="0.20001220703125" endY="0.5" layoutX="609.0" layoutY="350.0" startX="0.20001220703125" startY="-350.0" styleClass="line" />
-      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="8.0" layoutY="40.0" prefHeight="300.0" prefWidth="590.0" spacing="8.0">
+      <Line endX="0.20001220703125" endY="0.5" layoutX="691.0" layoutY="350.0" startX="0.20001220703125" startY="-350.0" styleClass="line" />
+      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="8.0" layoutY="40.0" prefHeight="300.0" prefWidth="674.0" spacing="8.0">
          <children>
             <Label text="إضافة عضو">
                <font>
@@ -32,7 +34,7 @@
             </Label>
             <HBox prefHeight="207.0" prefWidth="590.0" spacing="10.0">
                <children>
-                  <HBox alignment="TOP_CENTER" spacing="5.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="238.0" prefWidth="332.0" spacing="5.0">
                      <children>
                         <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="206.0" prefWidth="110.0" spacing="46.0">
                            <children>
@@ -56,7 +58,7 @@
                               <Insets top="6.0" />
                            </padding>
                         </VBox>
-                        <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="217.0" prefWidth="162.0" spacing="37.0">
+                        <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="238.0" prefWidth="217.0" spacing="37.0">
                            <children>
                               <TextField fx:id="nameField" alignment="TOP_LEFT" minHeight="-Infinity" prefHeight="40.0" prefWidth="191.0" promptText="الاسم">
                                  <font>
@@ -68,7 +70,7 @@
                                     <Font size="19.0" />
                                  </font>
                               </TextField>
-                              <ChoiceBox fx:id="subTypeBox" minHeight="-Infinity" prefHeight="40.0" prefWidth="190.0">
+                              <ChoiceBox fx:id="subTypeBox" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0">
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" top="10.0" />
                                  </padding>
@@ -80,7 +82,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <VBox spacing="42.0">
+                  <VBox prefHeight="238.0" prefWidth="336.0" spacing="42.0">
                      <children>
                         <HBox spacing="11.0">
                            <children>
@@ -101,14 +103,14 @@
                                     <Insets bottom="6.0" top="4.0" />
                                  </padding>
                               </VBox>
-                              <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="170.0" prefWidth="150.0" spacing="31.0">
+                              <VBox alignment="TOP_RIGHT" focusTraversable="true" prefHeight="112.0" prefWidth="202.0" spacing="31.0">
                                  <children>
-                                    <DatePicker fx:id="joinDate" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="150.0" promptText="التاريخ">
+                                    <DatePicker fx:id="joinDate" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="199.0" promptText="التاريخ">
                                        <VBox.margin>
                                           <Insets />
                                        </VBox.margin>
                                     </DatePicker>
-                                    <ChoiceBox fx:id="subStateBox" minHeight="-Infinity" prefHeight="40.0" prefWidth="190.0">
+                                    <ChoiceBox fx:id="subStateBox" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" prefWidth="190.0">
                                        <padding>
                                           <Insets bottom="10.0" left="10.0" top="10.0" />
                                        </padding>
@@ -122,19 +124,19 @@
                         </HBox>
                         <VBox spacing="5.0">
                            <children>
-                              <Button defaultButton="true" minHeight="-Infinity" mnemonicParsing="false" onAction="#saveMemberData" prefHeight="40.0" prefWidth="290.0" text="حفظ البيانات">
+                              <Button defaultButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#saveMemberData" prefHeight="40.0" prefWidth="290.0" text="حفظ البيانات">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Button>
                               <HBox spacing="6.0">
                                  <children>
-                                    <Button cancelButton="true" mnemonicParsing="false" onAction="#clearFields" prefHeight="37.0" prefWidth="150.0" text="مسح الخانات">
+                                    <Button cancelButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#clearFields" prefHeight="39.0" prefWidth="198.0" text="مسح الخانات">
                                        <font>
                                           <Font size="17.0" />
                                        </font>
                                     </Button>
-                                    <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#removeMember" prefHeight="39.0" prefWidth="134.0" text="حذف العضو" textFill="RED">
+                                    <Button maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#removeMember" prefHeight="39.0" prefWidth="154.0" text="حذف العضو" textFill="RED">
                                        <font>
                                           <Font size="17.0" />
                                        </font>
@@ -211,5 +213,11 @@
             <TableColumn fx:id="numberCol" editable="false" prefWidth="144.0" text="رقم الهاتف" />
         </columns>
       </TableView>
+      <ImageView fitHeight="69.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../_0008_users.svg.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="106.0" layoutY="45.0" startX="-110.0" styleClass="line" />
    </children>
 </AnchorPane>

@@ -96,7 +96,7 @@ public class DashboardController implements Initializable {
         scheduledNum.setText(scheduledCash() + "ج.م");
         scheduled.setLength(schLength);
         //done
-        doneNum.setText(String.valueOf(doneCash()) + "ج.م");
+        doneNum.setText(doneCash() + "ج.م");
         scheduled.setLength(360 - doneLength);
 
     }
@@ -125,7 +125,7 @@ public class DashboardController implements Initializable {
     private void newMembersFill() throws SQLException {
 
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND `joinDate` >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND `subType` != 'حصة';"
+                "SELECT `name`, `subType`, `joinDate` FROM `members_data` WHERE `subState` = 'نشط' AND `joinDate` > DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND `subType` != 'حصة';"
         );
         newData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
@@ -138,14 +138,13 @@ public class DashboardController implements Initializable {
                 LocalDate currentDate = LocalDate.now();
                 Period period = Period.between(localJoinDate, currentDate);
                 int joinDuration = period.getDays();
-
                 newData.add(new Member(name, type, joinDuration, true));
         }
         newMembers.setItems(newData);
     }
     private void dueMembersFill() throws SQLException {
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subValue`, `subType`, `number` FROM `members_data` WHERE `deadlineDate` = CURDATE() AND `subState` = 'نشط';");
+                "SELECT `name`, `subValue`, `subType`, `number` FROM `members_data` WHERE `deadlineDate` = DATE_SUB(NOW(), INTERVAL 0 DAY) AND `subState` = 'نشط';");
         dueData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
         while (resultSet.next() && !resultSet.getString("subType").equals("حصة")){

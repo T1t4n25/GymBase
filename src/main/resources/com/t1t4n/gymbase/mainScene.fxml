@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.HelloController">
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.HelloController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -22,7 +22,7 @@
       </AnchorPane>
    </center>
    <right>
-      <VBox prefHeight="532.0" prefWidth="113.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="700.0" prefWidth="117.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="TOP_CENTER" prefWidth="114.0">
                <children>
@@ -67,32 +67,70 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </VBox>
-            <VBox spacing="30.0">
+            <VBox prefHeight="511.0" prefWidth="114.0" spacing="30.0">
                <children>
-                  <Button fx:id="dashboard_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setDashboard" prefHeight="58.0" prefWidth="117.0" text="لوحة التحكم" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="dashboard_btn" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setDashboard" prefHeight="140.0" prefWidth="114.0" text="لوحة التحكم" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <graphic>
+                        <ImageView fx:id="ico1" fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                           <image>
+                              <Image url="@../../../_0004_dashboard.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="billing_btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAddMember" prefHeight="58.0" prefWidth="118.0" text="قائمة الأعضاء" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_btn1" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAddMember" prefHeight="140.0" prefWidth="119.0" text="قائمة الأعضاء" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <graphic>
+                        <ImageView fx:id="ico2" fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                           <image>
+                              <Image url="@../../../_0008_users.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Button>
-                  <Button fx:id="billing_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setPay" prefHeight="58.0" prefWidth="117.0" text="الدفع" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_btn" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setPay" prefHeight="140.0" prefWidth="117.0" text="الدفع" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
+                     <graphic>
+                        <ImageView fx:id="ico3" fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                           <image>
+                              <Image url="@../../../_0003_coin.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="billing_reports_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBilling" prefHeight="58.0" prefWidth="118.0" text="الماليات" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="billing_reports_btn" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBilling" prefHeight="140.0" prefWidth="118.0" text="الماليات" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
+                     <graphic>
+                        <ImageView fx:id="ico4" fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" scaleX="1.9" scaleY="1.9" scaleZ="1.9">
+                           <image>
+                              <Image url="@../../../_0006_target-revenue.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="add_member_btn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setSettings" prefHeight="58.0" prefWidth="116.0" text="الأعدادات" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="add_member_btn" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setSettings" prefHeight="140.0" prefWidth="116.0" text="الأعدادات" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
+                     <graphic>
+                        <ImageView fx:id="ico5" fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" scaleX="1.8" scaleY="1.8" scaleZ="1.8">
+                           <image>
+                              <Image url="@../../../_0002_cog.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
             </VBox>

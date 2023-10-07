@@ -41,6 +41,8 @@ public class billingController implements Initializable {
     @FXML
     Label monthIncome;
     @FXML
+    Label monthExpenses;
+    @FXML
     Arc BBArc;
     @FXML
     Arc fitArc;
@@ -72,7 +74,6 @@ public class billingController implements Initializable {
     ObservableList<Income> incomeData;
     int incomeSum = 0;
     public billingController(){
-
     }
 
     private void setIncomeTable() throws SQLException {
@@ -91,7 +92,8 @@ public class billingController implements Initializable {
             incomeData.add(new Income(value, name, date));
         }
         incomeTable.setItems(incomeData);
-        monthIncome.setText(String.valueOf(incomeSum) + "ج.م");
+        monthIncome.setText(incomeSum + "ج.م");
+        monthExpenses.setText(getExpensesMoney() + "ج.م");
         incomeSum = 0;
     }
     private void setMonthlyReportTable() throws SQLException {
@@ -165,6 +167,7 @@ public class billingController implements Initializable {
     private int getMoney(String type) throws SQLException {
         int sum = 0;
         String query = "SELECT `subValue` FROM `members_data` WHERE `subType` = '"+ type +"' AND (MONTH(`lastPayDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE()))";
+        //String query = "SELECT `subValue` FROM `members_data` WHERE `subType` = '"+ type +"' AND `subState` = 'نشط'";
         resultSet1 = DBConnection.statement.executeQuery(query);
         resultSet1.beforeFirst();
         while(resultSet1.next())
@@ -178,6 +181,14 @@ public class billingController implements Initializable {
         resultSet1.beforeFirst();
         while(resultSet1.next())
             sum += resultSet1.getInt("subValue");
+        return sum;
+    }
+    private int getExpensesMoney() throws SQLException {
+        int sum = 0;
+        resultSet2 = DBConnection.statement2.executeQuery("SELECT `value` FROM `expenses_data`");
+        resultSet2.beforeFirst();
+        while(resultSet2.next())
+            sum += resultSet2.getInt(1);
         return sum;
     }
     private void setArcsLabels() throws SQLException {
@@ -203,11 +214,11 @@ public class billingController implements Initializable {
         sessionLabel.setText(String.valueOf(session));
         totalLabel.setText(String.valueOf(totalMembers));
 
-        BBMoneyLabel.setText(String.valueOf(BBMny) + "ج.م");
-        fitMoneyLabel.setText(String.valueOf(fitMny) + "ج.م");
-        privateMoneyLabel.setText(String.valueOf(privateMny) + "ج.م");
-        sessionMoneyLabel.setText(String.valueOf(sessionMny) + "ج.م");
-        totalMoneyLabel.setText(String.valueOf(totalMny) + "ج.م");
+        BBMoneyLabel.setText(BBMny + "ج.م");
+        fitMoneyLabel.setText(fitMny + "ج.م");
+        privateMoneyLabel.setText(privateMny + "ج.م");
+        sessionMoneyLabel.setText(sessionMny + "ج.م");
+        totalMoneyLabel.setText(totalMny + "ج.م");
     }
     @FXML
     private void refreshData() throws SQLException {

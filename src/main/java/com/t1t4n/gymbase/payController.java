@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static com.t1t4n.gymbase.HelloApplication.prefs;
 public class payController implements Initializable {
     @FXML
     TextField subValueField;
@@ -68,7 +69,7 @@ public class payController implements Initializable {
     int editId;
     private final String[] typeChoices = {"كمال اجسام","تخسيس","برايفت", "حصة"};
 
-    public payController() throws SQLException {
+    public payController() {
 
         subType = new ChoiceBox<>();
         expDate = new DatePicker();
@@ -129,7 +130,7 @@ public class payController implements Initializable {
             int months = Integer.parseInt(monthsField.getText());
             while (resultSet.next()) {
                 if (resultSet.getInt(1) == editId && Integer.parseInt(subValueField.getText()) > 0) {
-                    resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(LocalDate.now()));
+                    resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(subStartDate.getValue()));
                     if (subType.getValue().equals("حصة"))
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue()));
                     else if (resultSet.getDate("deadlineDate") != null) {
@@ -147,7 +148,7 @@ public class payController implements Initializable {
                 resultSet = DBConnection.statement.executeQuery("SELECT * FROM `money_in_data`");
                 resultSet.moveToInsertRow();
                 resultSet.updateString(2, subName.getText());
-                resultSet.updateDate(3, java.sql.Date.valueOf(subStartDate.getValue()));
+                resultSet.updateDate(3, java.sql.Date.valueOf(LocalDate.now()));
                 resultSet.updateDouble(4, months * Double.parseDouble(subValueField.getText()));
                 resultSet.insertRow();
             }
@@ -182,6 +183,14 @@ public class payController implements Initializable {
             else
                 subStartDate.setValue(new java.sql.Date((selectedMember.getJoinDate()).getTime()).toLocalDate());
             editId = selectedMember.getId();
+            if(subType.getValue().equals(typeChoices[0]))
+                subValueField.setText(String.valueOf(prefs.getInt("BBPRICE", 0)));
+            else if (subType.getValue().equals(typeChoices[1]))
+                subValueField.setText(String.valueOf(prefs.getInt("FITPRICE", 0)));
+            else if (subType.getValue().equals(typeChoices[2]))
+                subValueField.setText(String.valueOf(prefs.getInt("PRIVPRICE", 0)));
+            else if (subType.getValue().equals(typeChoices[3]))
+                subValueField.setText(String.valueOf(prefs.getInt("SESPRICE", 0)));
         }
     }
 
@@ -196,7 +205,11 @@ public class payController implements Initializable {
         memberTableFill();
         expensesTableFill();
     }
-
+    @FXML
+    private void refreshTables() throws SQLException {
+        memberTableFill();
+        expensesTableFill();
+    }
     private void clearMemberFields(){
         subValueField.setText(null);
         monthsField.setText("1");

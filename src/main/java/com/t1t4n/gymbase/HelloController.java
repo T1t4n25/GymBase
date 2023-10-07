@@ -8,7 +8,6 @@ import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -22,7 +21,6 @@ public class HelloController implements Initializable {
     AnchorPane billing;
     AnchorPane settings;
 
-    ResultSet resultSet;
 
     public HelloController() throws IOException {
         dashboard = FXMLLoader.<AnchorPane>load(this.getClass().getResource("dashboard.fxml"));
@@ -56,8 +54,11 @@ public class HelloController implements Initializable {
         DBConnection.statement.executeUpdate(
                 "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 7 DAY) AND subState = 'نشط';");
         DBConnection.statement.executeUpdate(
-                "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate != NOW() AND subState = 'نشط' AND subType = 'حصة';");
+                "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 1 DAY) AND subState = 'نشط' AND subType = 'حصة';");
+        DBConnection.statement.executeUpdate(
+                "UPDATE members_data SET deadlineDate = null WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 1 DAY) AND subType = 'حصة';");
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
