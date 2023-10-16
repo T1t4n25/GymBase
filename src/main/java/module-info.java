@@ -4,6 +4,8 @@ module com.t1t4n.gymbase {
     requires java.sql;
     requires javafx.graphics;
     requires java.prefs;
+    requires java.datatransfer;
+    requires java.desktop;
 
 
     opens com.t1t4n.gymbase to javafx.fxml;
