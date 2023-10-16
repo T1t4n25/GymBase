@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.HelloController">
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.t1t4n.gymbase.HelloController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -22,7 +22,7 @@
       </AnchorPane>
    </center>
    <right>
-      <VBox prefHeight="700.0" prefWidth="117.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="700.0" prefWidth="146.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="TOP_CENTER" prefWidth="114.0">
                <children>
