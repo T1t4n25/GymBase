@@ -3,15 +3,19 @@ package com.t1t4n.gymbase;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
 import static com.t1t4n.gymbase.HelloApplication.prefs;
-
 
 public class settingsController implements Initializable {
     @FXML
@@ -24,6 +28,8 @@ public class settingsController implements Initializable {
     TextField sesPrice;
     @FXML
     ToggleButton themes;
+    @FXML
+    Hyperlink facebook;
 
 
     @FXML
@@ -63,9 +69,13 @@ public class settingsController implements Initializable {
         prefs.putInt("PRIVPRICE", Integer.parseInt(privPrice.getText()));
         prefs.putInt("SESPRICE", Integer.parseInt(sesPrice.getText()));
     }
+    @FXML
+    private void openurl() throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/GymBaseZ"));
+    }
     public settingsController() {
         themes = new ToggleButton();
-
+        facebook = new Hyperlink("https://www.facebook.com/GymBaseZ");
 
 
     }
@@ -75,5 +85,7 @@ public class settingsController implements Initializable {
         prefs = Preferences.userNodeForPackage(this.getClass());
         setToggleText();
         setPrice();
+
+
     }
 }

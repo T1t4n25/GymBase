@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
@@ -20,7 +21,14 @@
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
-      <HBox layoutX="28.0" layoutY="106.0" spacing="400.0">
+      <Line endX="100.0" layoutX="110.0" layoutY="52.0" startX="-110.0" styleClass="line" />
+      <Line endX="90.00006103515625" endY="616.2000122070312" layoutX="448.0" layoutY="87.0" startX="90.0001220703125" startY="-87.0" strokeWidth="5.0" styleClass="line" />
+      <ImageView fitHeight="69.0" fitWidth="54.0" layoutX="-3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../_0002_cog.svg.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="67.0" layoutY="124.0" spacing="10.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="96.0" prefWidth="249.0" spacing="10.0">
                <children>
@@ -36,6 +44,7 @@
                   </ToggleButton>
                </children>
             </VBox>
+            <Line endX="100.0" startX="-275.0" styleClass="line" />
             <VBox alignment="TOP_CENTER" spacing="30.0">
                <children>
                   <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="الأسعار">
@@ -106,12 +115,56 @@
                </children>
             </VBox>
          </children>
-      </HBox>
-      <Line endX="100.0" layoutX="110.0" layoutY="52.0" startX="-110.0" styleClass="line" />
-      <Line endX="90.00006103515625" endY="616.2000122070312" layoutX="448.0" layoutY="87.0" startX="90.0001220703125" startY="-87.0" strokeWidth="5.0" styleClass="line" />
-      <ImageView fitHeight="69.0" fitWidth="54.0" layoutX="-3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="659.0" layoutY="234.0" spacing="50.0">
+         <children>
+            <Label text="للدعم والأستفسارات">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" spacing="50.0">
+                     <children>
+                        <Label text="واتساب">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label text="صفحة الفيسبوك">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" spacing="50.0">
+                     <children>
+                        <Label text="01025726315">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Hyperlink onAction="#openurl" text="GymBase">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="89.0" fitWidth="72.0" layoutX="566.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../_0002_cog.svg.png" />
+            <Image url="@../../../png/whatsapp-logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="89.0" fitWidth="72.0" layoutX="564.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../png/facebook-logo.png" />
          </image>
       </ImageView>
    </children>
