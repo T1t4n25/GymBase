@@ -144,10 +144,10 @@ public class DashboardController implements Initializable {
     }
     private void dueMembersFill() throws SQLException {
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subValue`, `subType`, `number` FROM `members_data` WHERE `deadlineDate` = DATE_SUB(NOW(), INTERVAL 0 DAY) AND `subState` = 'نشط';");
+                "SELECT `name`, `subValue`, `subType`, `number` FROM `members_data` WHERE  `deadlineDate` = CURRENT_DATE AND `subState` = 'نشط' AND `subType` != 'حصة';");
         dueData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
-        while (resultSet.next() && !resultSet.getString("subType").equals("حصة")){
+        while (resultSet.next()){
                 String name = resultSet.getString("name");
                 String number = resultSet.getString("number");
                 int value = resultSet.getInt("subValue");
@@ -157,7 +157,7 @@ public class DashboardController implements Initializable {
     }
     private void overdueMembersFill() throws SQLException {
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `name`, `subValue`, `number`, `deadlineDate` FROM `members_data` WHERE `deadlineDate` < CURDATE() AND `subState` = 'نشط' AND `subType` != 'حصة';");
+                "SELECT `name`, `subValue`, `number`, `deadlineDate` FROM `members_data` WHERE (`deadlineDate` < CURDATE() OR `deadlineDate` IS NULL) AND `subState` = 'نشط' AND `subType` != 'حصة';");
         overdueData = FXCollections.observableArrayList();
         resultSet.beforeFirst();
         while (resultSet.next()){
