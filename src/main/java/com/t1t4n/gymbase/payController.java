@@ -2,6 +2,8 @@ package com.t1t4n.gymbase;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -87,6 +89,7 @@ public class payController implements Initializable {
         expValueCol = new TableColumn<>();
         membersTable = new TableView<>();
         expensesTable = new TableView<>();
+
     }
 
     @FXML
@@ -129,7 +132,7 @@ public class payController implements Initializable {
             resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data` WHERE `subState` != 'معلق'");
             int months = Integer.parseInt(monthsField.getText());
             while (resultSet.next()) {
-                if (resultSet.getInt(1) == editId && Integer.parseInt(subValueField.getText()) > 0) {
+                if (resultSet.getInt(1) == editId && (Integer.parseInt(subValueField.getText()) > 0)) {
                     resultSet.updateDate("lastPayDate", java.sql.Date.valueOf(subStartDate.getValue()));
                     if (subType.getValue().equals("حصة"))
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue()));
@@ -139,7 +142,10 @@ public class payController implements Initializable {
                     } else
                         resultSet.updateDate("deadlineDate", java.sql.Date.valueOf(subStartDate.getValue().plusMonths(months)));
                     resultSet.updateString("subType", subType.getValue());
-                    resultSet.updateDouble("subValue", Double.parseDouble(subValueField.getText()));
+                    if (Integer.parseInt(subValueField.getText()) == 1)
+                        resultSet.updateDouble("subValue", 0.0);
+                    else
+                        resultSet.updateDouble("subValue", Double.parseDouble(subValueField.getText()));
                     resultSet.updateString("subState", "نشط");
                     resultSet.updateRow();
                 }
@@ -149,7 +155,10 @@ public class payController implements Initializable {
                 resultSet.moveToInsertRow();
                 resultSet.updateString(2, subName.getText());
                 resultSet.updateDate(3, java.sql.Date.valueOf(LocalDate.now()));
-                resultSet.updateDouble(4, months * Double.parseDouble(subValueField.getText()));
+                if (Integer.parseInt(subValueField.getText()) == 1)
+                    resultSet.updateDouble(4, 0.0);
+                else
+                    resultSet.updateDouble(4, months * Double.parseDouble(subValueField.getText()));
                 resultSet.insertRow();
             }
             clearMemberFields();
@@ -183,14 +192,7 @@ public class payController implements Initializable {
             else
                 subStartDate.setValue(new java.sql.Date((selectedMember.getJoinDate()).getTime()).toLocalDate());
             editId = selectedMember.getId();
-            if(subType.getValue().equals(typeChoices[0]))
-                subValueField.setText(String.valueOf(prefs.getInt("BBPRICE", 0)));
-            else if (subType.getValue().equals(typeChoices[1]))
-                subValueField.setText(String.valueOf(prefs.getInt("FITPRICE", 0)));
-            else if (subType.getValue().equals(typeChoices[2]))
-                subValueField.setText(String.valueOf(prefs.getInt("PRIVPRICE", 0)));
-            else if (subType.getValue().equals(typeChoices[3]))
-                subValueField.setText(String.valueOf(prefs.getInt("SESPRICE", 0)));
+            setDefaultPrice();
         }
     }
 
@@ -216,6 +218,18 @@ public class payController implements Initializable {
         subName.setText("-");
         subStartDate.setValue(LocalDate.now());
     }
+    @FXML
+    private void setDefaultPrice(){
+        if(subType.getValue().equals(typeChoices[0]))
+            subValueField.setText(String.valueOf(prefs.getInt("BBPRICE", 0)));
+        else if (subType.getValue().equals(typeChoices[1]))
+            subValueField.setText(String.valueOf(prefs.getInt("FITPRICE", 0)));
+        else if (subType.getValue().equals(typeChoices[2]))
+            subValueField.setText(String.valueOf(prefs.getInt("PRIVPRICE", 0)));
+        else if (subType.getValue().equals(typeChoices[3]))
+            subValueField.setText(String.valueOf(prefs.getInt("SESPRICE", 0)));
+    }
+
 
 
     @Override
@@ -237,6 +251,12 @@ public class payController implements Initializable {
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         expValueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
+        subType.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                setDefaultPrice();
+            }
+        });
         try {
             memberTableFill();
             expensesTableFill();

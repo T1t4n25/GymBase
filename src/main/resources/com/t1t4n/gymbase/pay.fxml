@@ -24,7 +24,7 @@
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Label>
-      <VBox alignment="TOP_CENTER" layoutX="17.0" layoutY="56.0" spacing="20.0">
+      <VBox alignment="TOP_CENTER" layoutX="17.0" layoutY="56.0" prefHeight="278.0" prefWidth="687.0" spacing="20.0">
          <children>
             <Label alignment="TOP_CENTER" text="دفع إشترك عضو" textAlignment="CENTER">
                <font>
@@ -39,9 +39,9 @@
                   <Font name="Arial" size="24.0" />
                </font>
             </Label>
-            <HBox>
+            <HBox spacing="5.0">
                <children>
-                  <VBox spacing="20.0">
+                  <VBox prefHeight="102.0" prefWidth="327.0" spacing="20.0">
                      <children>
                         <HBox>
                            <children>
@@ -73,9 +73,9 @@
                   </VBox>
                   <VBox spacing="20.0">
                      <children>
-                        <HBox spacing="43.0">
+                        <HBox spacing="23.0">
                            <children>
-                              <Label alignment="TOP_CENTER" prefHeight="34.0" prefWidth="191.0" text="قيمة الاشتراك لكل شهر" textAlignment="CENTER">
+                              <Label alignment="TOP_CENTER" prefHeight="34.0" prefWidth="179.0" text="قيمة الاشتراك لكل شهر" textAlignment="CENTER">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
@@ -90,7 +90,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <HBox spacing="54.0">
+                        <HBox spacing="23.0">
                            <children>
                               <Label alignment="TOP_CENTER" prefHeight="34.0" prefWidth="178.0" text="عدد الأشهر" textAlignment="CENTER">
                                  <font>
@@ -127,15 +127,12 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-               <padding>
-                  <Insets left="13.0" />
-               </padding>
             </HBox>
          </children>
       </VBox>
       <Line endX="597.4000244140625" layoutX="599.0" layoutY="374.0" startX="-597.0" styleClass="line" />
-      <Line endX="48.20001220703125" endY="348.0" layoutX="725.0" layoutY="352.0" startX="50.0" startY="-352.0" styleClass="line" />
-      <VBox alignment="TOP_CENTER" layoutX="793.0" layoutY="42.0" spacing="10.0">
+      <Line endX="48.20001220703125" endY="348.0" layoutX="665.0" layoutY="352.0" startX="50.0" startY="-352.0" styleClass="line" />
+      <VBox alignment="TOP_CENTER" layoutX="733.0" layoutY="42.0" prefHeight="322.0" prefWidth="438.0" spacing="10.0">
          <children>
             <Label alignment="TOP_CENTER" text="تسجيل مصروفات الصالة" textAlignment="CENTER">
                <font>
@@ -174,7 +171,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="211.0" prefWidth="259.0" spacing="10.0">
                      <children>
                         <TextField fx:id="expField" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="191.0" promptText="اسم البند">
                            <font>
@@ -186,7 +183,7 @@
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <DatePicker fx:id="expDate" prefHeight="40.0" prefWidth="190.0" promptText="التاريخ">
+                        <DatePicker fx:id="expDate" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="190.0" promptText="التاريخ">
                            <padding>
                               <Insets bottom="4.0" top="10.0" />
                            </padding>
@@ -196,30 +193,30 @@
                   </VBox>
                </children>
             </HBox>
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#saveExpenses" prefHeight="38.0" prefWidth="201.0" text="تسجيل">
+            <Button defaultButton="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveExpenses" prefHeight="39.0" prefWidth="378.0" text="تسجيل">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <TableView fx:id="membersTable" focusTraversable="false" layoutX="8.0" layoutY="380.0" onMouseReleased="#edit" prefHeight="319.0" prefWidth="755.0">
+      <TableView fx:id="membersTable" focusTraversable="false" layoutX="8.0" layoutY="380.0" onMouseReleased="#edit" prefHeight="319.0" prefWidth="694.0">
         <columns>
             <TableColumn fx:id="idCol" editable="false" prefWidth="33.59997749328613" text="ID" />
-          <TableColumn fx:id="nameCol" editable="false" prefWidth="163.20000457763672" text="الاسم" />
-          <TableColumn fx:id="stateCol" editable="false" prefWidth="102.4000244140625" text="حالة الاشتراك" />
-            <TableColumn fx:id="typeCol" editable="false" prefWidth="100.0" text="نوع الاشتراك" />
-            <TableColumn fx:id="valueCol" editable="false" prefWidth="105.60006713867188" text="قيمة الاشتراك" />
-            <TableColumn fx:id="lastPayDateCol" editable="false" prefWidth="129.5999755859375" text="تاريخ اخر دفع" />
-            <TableColumn fx:id="deadLineCol" editable="false" prefWidth="118.39996337890625" text="تاريخ الإنتهاء" />
+          <TableColumn fx:id="nameCol" editable="false" prefWidth="146.40001678466797" text="الاسم" />
+          <TableColumn fx:id="stateCol" editable="false" prefWidth="98.39996337890625" text="حالة الاشتراك" />
+            <TableColumn fx:id="typeCol" editable="false" prefWidth="89.60003662109375" text="نوع الاشتراك" />
+            <TableColumn fx:id="valueCol" editable="false" prefWidth="95.199951171875" text="قيمة الاشتراك" />
+            <TableColumn fx:id="lastPayDateCol" editable="false" prefWidth="104.00003051757812" text="تاريخ اخر دفع" />
+            <TableColumn fx:id="deadLineCol" editable="false" prefWidth="122.39999999999998" text="تاريخ الإنتهاء" />
         </columns>
       </TableView>
-      <TableView fx:id="expensesTable" focusTraversable="false" layoutX="786.0" layoutY="386.0" prefHeight="306.0" prefWidth="404.0">
+      <TableView fx:id="expensesTable" focusTraversable="false" layoutX="726.0" layoutY="380.0" prefHeight="312.0" prefWidth="460.0">
          <columns>
-            <TableColumn fx:id="expNameCol" prefWidth="87.20001220703125" text="البند" />
-            <TableColumn fx:id="expValueCol" prefWidth="52.800048828125" text="القيمة" />
-            <TableColumn fx:id="dateCol" prefWidth="119.199951171875" text="التاريخ" />
-            <TableColumn fx:id="commentCol" prefWidth="140.800048828125" text="ملاحظات" />
+            <TableColumn fx:id="expNameCol" prefWidth="114.4000244140625" text="البند" />
+            <TableColumn fx:id="expValueCol" prefWidth="72.0" text="القيمة" />
+            <TableColumn fx:id="dateCol" prefWidth="104.0" text="التاريخ" />
+            <TableColumn fx:id="commentCol" prefWidth="176.800048828125" text="ملاحظات" />
          </columns>
       </TableView>
       <Line endX="100.0" layoutX="106.0" layoutY="55.0" startX="-110.0" styleClass="line" />
