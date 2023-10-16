@@ -54,6 +54,8 @@ public class HelloController implements Initializable {
         DBConnection.statement.executeUpdate(
                 "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 7 DAY) AND subState = 'نشط';");
         DBConnection.statement.executeUpdate(
+                "UPDATE members_data SET deadlineDate = null WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 7 DAY);");
+        DBConnection.statement.executeUpdate(
                 "UPDATE members_data SET subState = 'غير نشط' WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 1 DAY) AND subState = 'نشط' AND subType = 'حصة';");
         DBConnection.statement.executeUpdate(
                 "UPDATE members_data SET deadlineDate = null WHERE deadlineDate <= DATE_SUB(NOW(), INTERVAL 1 DAY) AND subType = 'حصة';");
@@ -67,7 +69,7 @@ public class HelloController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        container.setCenter(settings);
+        container.setCenter(dashboard);
 
     }
 
