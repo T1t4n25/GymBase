@@ -151,7 +151,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="699.0" layoutY="40.0" spacing="22.0">
+      <VBox alignment="TOP_CENTER" focusTraversable="true" layoutX="729.0" layoutY="40.0" spacing="22.0">
          <children>
             <Label text="بحث عن عضو">
                <font>
