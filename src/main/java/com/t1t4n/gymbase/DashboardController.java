@@ -84,11 +84,12 @@ public class DashboardController implements Initializable {
         int lateLength = 0;
         int schLength = 0;
         int doneLength = 0;
-        if((scheduledCash() + doneCash() > 0)) {
-            lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
-            schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
-            doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
+        if((scheduledCash() + doneCash() + lateSum > 0)) {
+            lateLength = (lateSum * 360) / (scheduledCash() + doneCash() + lateSum);
+            schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash() + lateSum);
+            doneLength = (doneCash() * 360) / (scheduledCash() + doneCash() + lateSum);
         }
+        //late
         lateNum.setText(lateSum + "ج.م");
         late.setLength(lateLength);
         lateSum = 0;
@@ -97,7 +98,7 @@ public class DashboardController implements Initializable {
         scheduled.setLength(schLength);
         //done
         doneNum.setText(doneCash() + "ج.م");
-        scheduled.setLength(360 - doneLength);
+        done.setLength(360 - doneLength);
 
     }
     private int doneCash() throws SQLException {
@@ -114,7 +115,7 @@ public class DashboardController implements Initializable {
     private int scheduledCash() throws SQLException {
         int scheduledSum = 0;
         resultSet = DBConnection.statement.executeQuery(
-                "SELECT `subValue`, `subType` FROM `members_data` WHERE (MONTH(`deadlineDate`) = MONTH(CURDATE()) AND YEAR(`lastPayDate`) = YEAR(CURDATE())) AND `subState` = 'نشط' AND `subType` != 'حصة'");
+                "SELECT `subValue`, `subType` FROM `members_data` WHERE (MONTH(`deadlineDate`) = MONTH(CURDATE()) AND YEAR(`deadlineDate`) = YEAR(CURDATE())) AND `subState` = 'نشط' AND `subType` != 'حصة'");
         resultSet.beforeFirst();
         while(resultSet.next()) {
             scheduledSum += resultSet.getInt("subValue");
