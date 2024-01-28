@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("GymBase");
+        stage.setTitle("OlympicCash");
 
         Image icon = new Image("dumble.png");
         stage.getIcons().add(icon);
@@ -34,7 +34,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-
         System.setProperty("prism.lcdtext", "false");
         System.setProperty("prism.text", "t2k");
         DBConnection.getConnect();

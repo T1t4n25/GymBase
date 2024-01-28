@@ -1,6 +1,6 @@
 package com.t1t4n.gymbase;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Member {
     int id;

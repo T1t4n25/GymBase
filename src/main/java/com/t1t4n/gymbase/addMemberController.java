@@ -8,11 +8,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class addMemberController implements Initializable{
@@ -65,6 +65,9 @@ public class addMemberController implements Initializable{
     int editId;
     public final String ALLQUERY = "SELECT * FROM `members_data`";
     public addMemberController() throws SQLException {
+        membersTable = new TableView<>();
+        refreshTable(ALLQUERY);
+
     }
     public void refreshTable(String query) throws SQLException {
         resultSet =DBConnection.statement.executeQuery(query);
@@ -84,6 +87,37 @@ public class addMemberController implements Initializable{
             data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
         }
             membersTable.setItems(data);
+
+        membersTable.setRowFactory(tv -> {
+            return new TableRow<Member>() {
+                @Override
+                protected void updateItem(Member item, boolean empty) {
+                    super.updateItem(item, empty);
+
+                    if (item == null || empty) {
+                        setStyle("");
+                    } else {
+                        // Apply the CSS class based on your conditions
+                        if ("نشط".equals(item.getSubState()) && item.getSubValue() != 0 && item.getDeadlineDate() != null && !item.getDeadlineDate().toLocalDate().isBefore(LocalDate.now())) {
+                            setStyle("-fx-background-color: #03C988");
+                            //this.setTextFill(Color.BLACK);
+                            //setTextFill(Color.BLACK);
+                        } else if ("معلق".equals(item.getSubState())) {
+                            setStyle("-fx-background-color: #0096FF;");
+                            //this.setTextFill(Color.BLACK);
+                        }
+                        //Late members coloring
+                        else if ("نشط".equals(item.getSubState()) && item.getDeadlineDate() != null && item.getDeadlineDate().toLocalDate().isBefore(LocalDate.now())) {
+                            setStyle("-fx-background-color: #EB6440;");
+                            //this.setTextFill(Color.BLACK);
+                        } else {
+                            // Clear the style if none of the conditions match
+                            setStyle("");
+                        }
+                    }
+                }
+            };
+        });
 
     }
     @FXML
@@ -105,6 +139,7 @@ public class addMemberController implements Initializable{
             data.add(new Member(id, name, status, type, value, deadline, date, number, lastPay));
         }
         membersTable.setItems(data);
+
 
     }
     @FXML
@@ -168,7 +203,7 @@ public class addMemberController implements Initializable{
     private void clearSearchFields() throws SQLException {
         searchNameField.setText(null);
         searchNumberField.setText(null);
-        refreshTable();
+        refreshTable(ALLQUERY);
     }
     @FXML
     private void edit() throws SQLException {

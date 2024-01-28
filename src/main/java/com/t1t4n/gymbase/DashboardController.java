@@ -164,7 +164,7 @@ public class DashboardController implements Initializable {
             String name = resultSet.getString("name");
             String number = resultSet.getString("number");
             int value = resultSet.getInt("subValue");
-            java.util.Date deadline = resultSet.getDate("deadlineDate");
+            Date deadline = resultSet.getDate("deadlineDate");
             overdueData.add(new Member(name, value, deadline, number));
             lateSum += value;
             lateMemSum++;
