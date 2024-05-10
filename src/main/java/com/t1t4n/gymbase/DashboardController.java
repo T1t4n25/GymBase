@@ -84,10 +84,10 @@ public class DashboardController implements Initializable {
         int lateLength = 0;
         int schLength = 0;
         int doneLength = 0;
-        if((scheduledCash() + doneCash() + lateSum > 0)) {
-            lateLength = (lateSum * 360) / (scheduledCash() + doneCash() + lateSum);
-            schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash() + lateSum);
-            doneLength = (doneCash() * 360) / (scheduledCash() + doneCash() + lateSum);
+        if((scheduledCash() + doneCash()> 0)) {
+            lateLength = (lateSum * 360) / (scheduledCash() + doneCash());
+            schLength = (scheduledCash() * 360) / (scheduledCash() + doneCash());
+            doneLength = (doneCash() * 360) / (scheduledCash() + doneCash());
         }
         //late
         lateNum.setText(lateSum + "ج.م");
@@ -98,7 +98,7 @@ public class DashboardController implements Initializable {
         scheduled.setLength(schLength);
         //done
         doneNum.setText(doneCash() + "ج.م");
-        done.setLength(360 - doneLength);
+        done.setLength(doneLength);
 
     }
     private int doneCash() throws SQLException {

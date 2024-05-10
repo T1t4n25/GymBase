@@ -12,8 +12,8 @@
     <properties>
         <main-class>com.t1t4n.gymbase.Main</main-class>
         <app.name>GymBase</app.name>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <windows.upgrade.uuid>92225ae2-53c0-11ee-8c99-0242ac120002</windows.upgrade.uuid>
         <macos.sign></macos.sign>
         <macos.sign.identity></macos.sign.identity>
@@ -67,8 +67,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <source>20</source>
-                    <target>20</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
             <plugin>

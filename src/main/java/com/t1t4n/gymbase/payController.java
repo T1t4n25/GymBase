@@ -96,7 +96,14 @@ public class payController implements Initializable {
     private void memberTableFill() throws SQLException {
         resultSet = DBConnection.statement.executeQuery("SELECT * FROM `members_data` WHERE `subState` != 'معلق'");
         membersData = FXCollections.observableArrayList();
-        int id;String name;String status;String type;int value;Date date;Date lastPay;Date deadline;
+        int id;
+        String name;
+        String status;
+        String type;
+        int value;
+        Date date;
+        Date lastPay;
+        Date deadline;
         resultSet.beforeFirst();
         while (resultSet.next()) {
             id = resultSet.getInt(1);
@@ -251,12 +258,7 @@ public class payController implements Initializable {
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         expValueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
-        subType.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                setDefaultPrice();
-            }
-        });
+        subType.setOnAction(event -> setDefaultPrice());
         try {
             memberTableFill();
             expensesTableFill();

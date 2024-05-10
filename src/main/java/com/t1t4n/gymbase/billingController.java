@@ -99,7 +99,7 @@ public class billingController implements Initializable {
     private void setMonthlyReportTable() throws SQLException {
         resultSet1 = DBConnection.statement.executeQuery("SELECT `id`,`date`, `value` FROM `money_in_data` ORDER BY date DESC;");
         resultSet2 = DBConnection.statement2.executeQuery("SELECT `id`, `date`, `value` FROM `expenses_data` ORDER BY date DESC;");
-        LocalDate date1 = null, date2  = null, date3  = null;
+        LocalDate date1, date2, date3;
         int incomeTotal = 0;
         int expenseTotal = 0;
         boolean firstime = true;
@@ -186,7 +186,7 @@ public class billingController implements Initializable {
     }
     private int getExpensesMoney() throws SQLException {
         int sum = 0;
-        resultSet2 = DBConnection.statement2.executeQuery("SELECT `value` FROM `expenses_data`");
+        resultSet2 = DBConnection.statement2.executeQuery("SELECT `value` FROM `expenses_data`  WHERE (MONTH(`date`) = MONTH(CURDATE()) AND YEAR(`date`) = YEAR(CURDATE()))");
         resultSet2.beforeFirst();
         while(resultSet2.next())
             sum += resultSet2.getInt(1);

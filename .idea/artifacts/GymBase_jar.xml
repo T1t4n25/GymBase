@@ -3,75 +3,221 @@
     <output-path>$PROJECT_DIR$/out/artifacts/GymBase_jar</output-path>
     <root id="archive" name="GymBase.jar">
       <element id="module-output" name="GymBase" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/20/javafx-base-20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/20/javafx-base-20-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/20/javafx-fxml-20-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/20/javafx-controls-20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/20/javafx-fxml-20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/20/javafx-controls-20-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/20/javafx-graphics-20-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/mysql/mysql-connector-j/8.0.32/mysql-connector-j-8.0.32.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/20/javafx-graphics-20.jar" path-in-jar="/" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-console-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-console-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-datetime-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-debug-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-errorhandling-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-file-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-file-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-file-l2-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-handle-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-heap-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-interlocked-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-libraryloader-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-localization-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-memory-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-namedpipe-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-processenvironment-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-processthreads-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-processthreads-l1-1-1.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-profile-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-string-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-synch-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-synch-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-sysinfo-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-timezone-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-core-util-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-conio-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-convert-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-environment-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-filesystem-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-heap-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-locale-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-math-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-multibyte-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-private-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-process-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-runtime-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-stdio-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-string-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-time-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/api-ms-win-crt-utility-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/decora_sse.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/fxplugins.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/glass.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/glib-lite.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/gstreamer-lite.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/javafx_font.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/javafx_iio.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/jfxmedia.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/jfxwebkit.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/msvcp140.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/msvcp140_1.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/msvcp140_2.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/prism_common.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/prism_d3d.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/prism_sw.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/ucrtbase.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/vcruntime140.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../javafx-sdk-20.0.2/bin/vcruntime140_1.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-console-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-console-l1-2-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-datetime-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-debug-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-errorhandling-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-fibers-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-file-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-file-l1-2-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-file-l2-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-handle-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-heap-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-interlocked-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-libraryloader-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-localization-l1-2-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-memory-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-namedpipe-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-processenvironment-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-processthreads-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-processthreads-l1-1-1.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-profile-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-string-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-synch-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-synch-l1-2-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-sysinfo-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-timezone-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-core-util-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-conio-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-convert-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-environment-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-filesystem-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-heap-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-locale-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-math-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-multibyte-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-private-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-process-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-runtime-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-stdio-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-string-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-time-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/api-ms-win-crt-utility-l1-1-0.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/attach.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/awt.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/decora_sse.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/dt_shmem.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/dt_socket.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/extnet.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/fontmanager.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/freetype.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/fxplugins.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/glass.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/glib-lite.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/gstreamer-lite.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/instrument.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/j2gss.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/j2pcsc.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/j2pkcs11.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jaas.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jabswitch.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jaccessinspector.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jaccesswalker.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jar.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jarsigner.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/java.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/java.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javaaccessbridge.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javac.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javadoc.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javafx_font.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javafx_iio.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javajpeg.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javap.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/javaw.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jawt.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jcmd.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jconsole.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jdb.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jdeprscan.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jdeps.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jdwp.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jfr.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jfxmedia.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jfxwebkit.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jhsdb.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jimage.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jimage.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jinfo.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jli.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jlink.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jmap.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jmod.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jpackage.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jpackage.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jps.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jrunscript.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jshell.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jsound.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jstack.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jstat.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jstatd.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jsvml.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/jwebserver.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/keytool.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/kinit.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/klist.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/ktab.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/lcms.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/le.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/management.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/management_agent.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/management_ext.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/mlib_image.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/msvcp140.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/msvcp140_1.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/msvcp140_2.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/net.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/nio.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/prefs.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/prism_common.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/prism_d3d.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/prism_sw.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/rmi.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/rmiregistry.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/saproc.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/serialver.exe" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/splashscreen.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/sspi_bridge.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/sunmscapi.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/syslookup.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/ucrtbase.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/vcruntime140.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/vcruntime140_1.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/verify.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/w2k_lsa_auth.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/windowsaccessbridge-32.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/windowsaccessbridge-64.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/bin/zip.dll" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.base.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.compiler.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.datatransfer.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.desktop.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.instrument.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.logging.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.management.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.management.rmi.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.naming.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.net.http.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.prefs.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.rmi.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.scripting.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.se.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.security.jgss.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.security.sasl.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.smartcardio.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.sql.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.sql.rowset.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.transaction.xa.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.xml.crypto.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/java.xml.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.base.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.controls.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.fxml.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.graphics.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.media.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.swing.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/javafx.web.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.accessibility.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.attach.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.charsets.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.compiler.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.crypto.cryptoki.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.crypto.ec.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.crypto.mscapi.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.dynalink.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.editpad.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.hotspot.agent.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.httpserver.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.incubator.vector.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.ed.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.jvmstat.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.le.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.opt.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.vm.ci.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.vm.compiler.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.internal.vm.compiler.management.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jartool.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.javadoc.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jcmd.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jconsole.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jdeps.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jdi.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jdwp.agent.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jfr.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jlink.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jpackage.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jshell.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jsobject.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.jstatd.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.localedata.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.management.agent.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.management.jfr.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.management.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.naming.dns.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.naming.rmi.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.net.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.nio.mapmode.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.random.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.sctp.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.security.auth.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.security.jgss.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.unsupported.desktop.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.unsupported.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.xml.dom.jmod" />
+      <element id="file-copy" path="C:/Program Files/BellSoft/LibericaJDK-21-Full/jmods/jdk.zipfs.jmod" />
     </root>
   </artifact>
 </component>
